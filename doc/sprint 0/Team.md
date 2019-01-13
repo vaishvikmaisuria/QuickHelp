@@ -13,9 +13,9 @@ Name: Roshaan Faisal
 UtorID: faisalro
 Student No. 1003297176
 
-Name: Ainy Afzal
-UtorID: 
-Student No. 
+Name: Qurat-ul-ain Afzal
+UtorID: afzalqur
+Student No. 1003226555
 
 Name: Wen Tong
 UtorID: tongwen
