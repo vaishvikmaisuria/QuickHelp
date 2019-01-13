@@ -6,8 +6,8 @@ UtorID: maisuri9
 Student No. 1003362531
 
 Name: Christine Taing 
-UtorID: 
-Student No. 
+UtorID: taingchr
+Student No. 1000778385
 
 Name: Roshaan Faisal 
 UtorID: 
