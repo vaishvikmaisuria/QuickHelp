@@ -18,8 +18,8 @@ UtorID:
 Student No. 
 
 Name: Wen Tong
-UtorID: 
-Student No. 
+UtorID: tongwen
+Student No. 1003482135
 
 Name: Ibrahim Abdi
 UtorID:
