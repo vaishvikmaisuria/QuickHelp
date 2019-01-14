@@ -22,8 +22,8 @@ UtorID: tongwen
 Student No. 1003482135
 
 Name: Ibrahim Abdi
-UtorID:
-Student No. 
+UtorID: abdiibra
+Student No. 1003509651
 
 Name: Parth Brahmbhatt
 UtorID: 
