@@ -1,11 +1,11 @@
 Team name: QuickHelp
 # User Stories
 --------------------------------------------------------------------------
-NAME     :
-PRIORITY : 
-ESTIMATE : 
-AS A     : doctor
-I WANT   : 
+NAME     :Registration
+PRIORITY : 1
+ESTIMATE : 7 days
+AS A     : Anyone
+I WANT   : to be able to register users on the app
 SO THAT  : 
 --------------------------------------------------------------------------
 
