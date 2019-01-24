@@ -20,7 +20,7 @@ OBJECTIVES
 Key Users
 ---------
 ###OverView
-1. Injured Patient (Normal User)
+1. Normal User
 2. Skilled Individuals
 3. Doctors
 
