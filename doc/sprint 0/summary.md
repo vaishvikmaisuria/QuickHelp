@@ -29,9 +29,9 @@ Key Users
 2.  The Skilled Individual is meant to describe a single individual who has registered with the app and has a verified certificate to perform a medical treatment in Canda. This individual will be able to receive SOS signals so that they can help an injured patient calling for help. 
 Example: CPR treatment certificate by a Lifeguard. 
 3. The Doctor is meant to describe a single individual who has registered with the app and has a verified document proving they are practicing doctor in Canda. Similarly to Skilled Individuals, They will be able to receive SOS signals. 
-Example: 1. Critical Care Medicine Specialists: who take care for people who are critically ill or injured. 
-2. Family Physicians: who take care of primary illness 
-3. Physiatrists: who take care of sports injuries. 
+Example: a. Critical Care Medicine Specialists: who take care for people who are critically ill or injured. 
+         b. Family Physicians: who take care of primary illness 
+         c. Physiatrists: who take care of sports injuries. 
 
 ---
 Scenarios
