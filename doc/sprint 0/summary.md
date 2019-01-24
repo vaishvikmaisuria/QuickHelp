@@ -25,23 +25,23 @@ Key Users
 3. Doctors
 
 ###Details
-1.  The Injured Patient is meant to describe every individual in the world that requires medical aid. Also, the individual must have access to a phone to use the phone. 
-2.  The Skilled Individual is meant to describe a single individual who has registered with the app and has a verified certificate to perform a medical treatment in Canda. This individual will be able to receive SOS signals so that they can help an injured patient calling for help. 
-Example: CPR treatment certificate by a Lifeguard. 
-3. The Doctor is meant to describe a single individual who has registered with the app and has a verified document proving they are practicing doctor in Canda. Similarly to Skilled Individuals, They will be able to receive SOS signals. 
-Example: a. Critical Care Medicine Specialists: who take care for people who are critically ill or injured. 
-         b. Family Physicians: who take care of primary illness 
-         c. Physiatrists: who take care of sports injuries. 
+1.  The Injured Patient is meant to describe every individual in the world that requires medical aid. Also, the individual must have access to a phone to use the app. 
+2.  The Skilled Individual is meant to describe any individual who has registered with the app and has a verified certificate to perform a emergency medical procedure in Canada. This individual will be able to receive SOS signals so that they can help an injured patient calling for help. 
+Example: CPR certificate by a Lifeguard. 
+3. The Doctor is meant to describe any individual who has registered with the app and has a verified document proving they are practicing doctor in Canada. Similar to Skilled Individuals, They will be able to receive SOS signals. <br />
+Example: a. Critical Care Medicine Specialists: who take care for people who are critically ill or injured. <br />
+         b. Family Physicians: who take care of primary illness <br \>
+         c. Physiatrists: who take care of sports injuries. <br \>
 
 ---
 Scenarios
 ---------
 ###OverView
-1. User friend is choking at a restaurant because he swallowed a big piece of meat.
+1. User's friend is choking at a restaurant because he swallowed a big piece of meat.
 
 2.  User dislocates his arm and needs assistance with keeping his arm in the right position to lessen the pain.
 
-3.  The user faces a life-threatening situation where he stabbed and need a professional doctor to help keep him from bleeding to death.  
+3.  The user faces a life-threatening situation where he is stabbed and needs a professional doctor to help keep him from bleeding to death.  
 
 ###Details
 #### Scenario 1
@@ -50,21 +50,21 @@ My friend is choking at a restaurant, and we need someone to perform Abdominal t
 
 #### Scenario 2 
 
-I was leaving UTM after a late night study session in the library. As I am walking down the stairs to go to the parking lot, I tumbled down the stairs and dislocated my arm, and I started bleeding everywhere. There is no one around to help, so I decided to use QuickHealth. The app was able to alert for an ambulance and also provide tips and instructions on what I could do to reduce the bleeding, while I wait for the ambulance to come. 
+I was leaving UTM after a late night study session in the library. As I am walking down the stairs to go to the parking lot, I tumbled down the stairs and dislocated my arm, and I started bleeding everywhere. There is no one around to help, so I decided to use QuickHealth. The app was able to alert for an ambulance and also provide tips and instructions on what I could do to reduce the bleeding, while I wait for an ambulance to come. 
 
 #### Scenario 3
 
-My friend and I were walking down through the park at midnight, and some person came and threatened us with a knife. We gave our belongings to him, but the robber still attacked my friend. He stabbed my friend on the shoulder and left him bleeding. It was a late night, so we decided to use the app to contact any skilled doctors in the area. Dr. Brown received an alert that woke him up. The alert described the location and type of injury. He figured he could help, so he made his way to us and helped slow the bleeding until the ambulance arrived. 
+My friend and I were walking down through the park at midnight, and some person came and threatened us with a knife. We gave our belongings to him, but the robber still attacked my friend. He stabbed my friend on the shoulder and left him bleeding. It was late at night, so we decided to use the app to contact any doctors in the area. Dr. Brown received an alert that woke him up. The alert described the location and type of injury. He figured he could help, so he made his way to us and helped slow the bleeding until the ambulance arrived. 
 
 
 ---
 Principles
 ---------
 ###OverView
-1. Intuitive, easy to navigate UI
-2. Instant and simple navigation for the doctor to injured individual 
-3. Quick signal to doctors
-4. Notify the doctor if the ambulance already is assisting the injured individual 
+1. Intuitive, easy to navigate UI.
+2. Instant and simple navigation for the doctor to injured individual.
+3. Quick signal to doctors.
+4. Notify the doctor if the ambulance already is assisting the injured individual.
 5. All doctors and skilled individual are checked with proper documentation.
 
 
@@ -76,9 +76,9 @@ Principles
 
 3. The SOS signal should be of the highest priority when making calls to the server so that the SOS signal is uploaded to the app's map so that skilled individuals and doctors can view the SOS signal on their app. 
 
-4. Don't want to waste the Doctors time, so that we unable the injured user to specify when an ambulance has already reached him and or if he has already found help. In short, if the patient is currently safe then cancel the SOS signal. 
+4. Don't want to waste the Skilled individual's time, so the injured user can specify when an ambulance has already reached him and or if he has already found help. In short, if the patient is currently safe then cancel the SOS signal. 
 
-5. we need to enable the app to take pictures and upload documents so that we can verify a skilled individual or doctor. 
+5. We need to enable the app to take pictures and upload documents so that we can verify a skilled individual or doctor. 
 
 
 
