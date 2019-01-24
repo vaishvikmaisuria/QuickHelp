@@ -40,4 +40,3 @@
 
 20. WHen usign the app, I should be shown step by step medical advice when waiting for a skilled individual to arrive.
 
-
