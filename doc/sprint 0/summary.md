@@ -46,11 +46,11 @@ Scenarios
 ###Details
 #### Scenario 1
 
-My friend is choking at a restaurant, and we need someone to perform Abdominal thrusts, and the ambulance is too far away. I requested for assistance using QuickHealth which finds the closest person with medical training (if they are registered on the app). John, who has Abdominal thrusts practice, receives a request where he can accept/decline if he has the time to save my friend or at least help out. He can also use the app's navigation feature to get detail location and how to get to my friend.
+My friend is choking at a restaurant, and we need someone to perform Abdominal thrusts, and the ambulance is too far away. I requested for assistance using QuickHelp which finds the closest person with medical training (if they are registered on the app). John, who has Abdominal thrusts practice, receives a request where he can accept/decline if he has the time to save my friend or at least help out. He can also use the app's navigation feature to get detail location and how to get to my friend.
 
 #### Scenario 2 
 
-I was leaving UTM after a late night study session in the library. As I am walking down the stairs to go to the parking lot, I tumbled down the stairs and dislocated my arm, and I started bleeding everywhere. There is no one around to help, so I decided to use QuickHealth. The app was able to alert for an ambulance and also provide tips and instructions on what I could do to reduce the bleeding, while I wait for an ambulance to come. 
+I was leaving UTM after a late night study session in the library. As I am walking down the stairs to go to the parking lot, I tumbled down the stairs and dislocated my arm, and I started bleeding everywhere. There is no one around to help, so I decided to use QuickHelp. The app was able to alert for an ambulance and also provide tips and instructions on what I could do to reduce the bleeding, while I wait for an ambulance to come. 
 
 #### Scenario 3
 

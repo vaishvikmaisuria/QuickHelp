@@ -6,7 +6,7 @@
 
 3. When I want to use the app, I should be able to easily sign to access my account
 
-4. When registering for the app, I should be able to choose a unique username to be uniquely idetified in my app.
+4. When registering for the app, I should be able to choose a unique username to be uniquely identified in my app.
 
 5. When registering for the app, I should be able to set a secure password for my account security
 
@@ -22,21 +22,21 @@
 
 11. When using the app, I should be able to have a panic mode so that I am able to get help faster
 
-12. When using the app, I should be able to get the directions leading me to the patient i can help
+12. When using the app, I should be able to get the directions leading me to the patient I can help
 
 13. When using the app, I should have the option to cancel my help signal if I get help from somewhere else.
 
 14. When using the app, I should be able to accept or dismiss the notification for help
 
-15. When using the app, I shuold be able to rate my experience when a skilled individual helped me
+15. When using the app, I should be able to rate my experience when a skilled individual helped me
 
 16. When using the app, I should be able to set my availability status as online or offline, if I am available to help people in need
 
 17. When using the app, I should be able to update my profile with information about myself.
 
-18. When usign the app, I shoudl be able to chat with other uers on the app about medical advice and to join the community
+18. When usign the app, I should be able to chat with other users on the app about medical advice and to join the community
 
 19. When using the app, I should be able to go through a identity verification process for the security of the app.
 
-20. WHen usign the app, I should be shown step by step medical advice when waiting for a skilled individual to arrive.
+20. When usign the app, I should be shown step by step medical advice when waiting for a skilled individual to arrive.
 
