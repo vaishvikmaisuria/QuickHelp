@@ -1,17 +1,17 @@
 OBJECTIVES
 ----------
-###Purpose 
+### Purpose 
 1. Save Lives 
 2. Help doctors reach injured individuals quickly
 
-###OverView
+### OverView
 1. Setup the account management system and (restricted) normal user access. 
 2. Allow any user to ask for help using the SOS signal. 
 - Choose the type of injury and send the location to nearby doctors 
 - Simple, Quick and User-friendly UI which enables doctors to reach an injured individual. 
 3. Allow for Doctors to view all SOS signals on a map near his location.   
 
-###Details
+### Details
 1. We plan to develop an account management system that allows for three different registration process. A user must be a registered user to be able to use QuickHelp. During the registration process, the user has a choice to register as a skilled individual or a doctor. If neither choice applies, then they are just a normal user. If a user decides to also register as a skilled individual or doctor, they are required to provide official documents, and certifications to prove their eligibility to assist injured individuals in Canada. 
 2. Our goal is to provide users with a simple to use and minimalistic interface. The user should be able to navigate around the app and be able to request for help during an emergency quickly and also send the injured individuals information so that he easier to locate. A simple user interface will reduce loading time and allow for users to navigate around the app and process requests more quickly.
 3. We plan to develop a UI that displays a map similar to Google maps with locations of all SOS signals with colours from green to red marking the severity of the SOS signal. Which will allow doctors to click on the SOS signal and check information and accept or reject the request? On accepting, the map will give the Doctor the fastest route to the patient. 
@@ -19,12 +19,12 @@ OBJECTIVES
 ---
 Key Users
 ---------
-###OverView
+### OverView
 1. Normal User
 2. Skilled Individuals
 3. Doctors
 
-###Details
+### Details
 1.  The Injured Patient is meant to describe every individual in the world that requires medical aid. Also, the individual must have access to a phone to use the app. 
 2.  The Skilled Individual is meant to describe any individual who has registered with the app and has a verified certificate to perform a emergency medical procedure in Canada. This individual will be able to receive SOS signals so that they can help an injured patient calling for help. 
 Example: CPR certificate by a Lifeguard. 
@@ -36,14 +36,14 @@ Example: a. Critical Care Medicine Specialists: who take care for people who are
 ---
 Scenarios
 ---------
-###OverView
+### OverView
 1. User's friend is choking at a restaurant because he swallowed a big piece of meat.
 
 2.  User dislocates his arm and needs assistance with keeping his arm in the right position to lessen the pain.
 
 3.  The user faces a life-threatening situation where he is stabbed and needs a professional doctor to help keep him from bleeding to death.  
 
-###Details
+### Details
 #### Scenario 1
 
 My friend is choking at a restaurant, and we need someone to perform Abdominal thrusts, and the ambulance is too far away. I requested for assistance using QuickHelp which finds the closest person with medical training (if they are registered on the app). John, who has Abdominal thrusts practice, receives a request where he can accept/decline if he has the time to save my friend or at least help out. He can also use the app's navigation feature to get detail location and how to get to my friend.
@@ -60,7 +60,7 @@ My friend and I were walking down through the park at midnight, and some person 
 ---
 Principles
 ---------
-###OverView
+### OverView
 1. Intuitive, easy to navigate UI.
 2. Instant and simple navigation for the doctor to injured individual.
 3. Quick signal to doctors.
@@ -68,7 +68,7 @@ Principles
 5. All doctors and skilled individual are checked with proper documentation.
 
 
-###Details
+### Details
 
 1. An easy one-click navigation with minimalistic typing is required so that no time is wasted when contacting an individual for help.  Unnecessary features and information can clutter the interface and confuse the user at a crucial time of need.
 
