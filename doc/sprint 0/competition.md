@@ -1,20 +1,9 @@
-// Competition.md
-// Talk about existing products similar to this or similar function
-// How our product is different
-// How is our product better
-//    - What group of Users/Senerios is it better in
-//    - Why didn't the competitors focus on these Users/Senerios
-//    - What would it take for the competitors to focus on these Users/Senerios
+**Quick Help against the Competition**
 
-The whole idea to save a person’s life with a push of a button is unique on its own. 
-We are designing a mobile application which allows certified doctors, practitioners and 
-CPR certified induvials in the vicinity to come aid an injured or dying person in times 
-of extreme severity before even the ambulance gets there. Data collected from 300 trauma 
-centers found that of the gunshot victims who came to the E.R via ambulance, 19.3% died 
-of their injuries. In this way, a faster solution was needed and that is how the idea of 
-this application was formed to lessen and prevent the person from dying all together if 
-there was a doctor in the area that can help you immediately. As for the doctors, this 
-application not only allows them for the incentive to make a few extra dollars on the side, 
-but it allows them to also make a difference in the community.
+The whole idea to save a person’s life with a push of a button is unique on its own. Quick Help is a mobile application which allows certified doctors, practitioners and first-aid certified individuals in the area to come aid an injured or dying person in times of extreme severity before even the ambulance gets there. 
 
-Uber URL: https://www.uber.com/ca/en/
+One of the leading competitors is the 911 governmental medical system – a system in which medical services are dispatched to reach a person within 8-10 mins and treat them. As our application performs similar task to this system, we had to set it apart. Data collected from 300 trauma centers found that of the gunshot victims who came to the E.R via ambulance, 19.3% died of their injuries. In this way, a faster solution was needed; to lessen and prevent a person from dying all together by providing immediate assistance by a doctor who is available in the proximity. As for the doctors, this application not only allows them for the incentive to make a few cash on the side (via voluntary donation by the patient), but it allows them to also make a difference in the community and save more lives.
+
+Another competitor is Uber. Uber is similar in a sense that it provides convenient service to people in your neighborhood. Having to wait for a cab can be gruesome and thus the solution of utilizing members in your neighborhood for providing the same services as a cab is a very effective solution. Studies that were conducted found that taking UberX was an effective solution as it was saving 6 mins for the same ride that a cab would take. Our application used the same concept but by saving time we are saving lives. Specifically, the time for a person to start getting treated. It takes approximately 8 mins for an ambulance to arrive so we wanted to lessen that time by finding doctors in your neighborhood that can start treating the patient earlier than 8 mins. Some features that are similar to uber is the way they utilize the map to show people in the area. It utilizes similar features as Uber such as allowing doctors to select who they want to treat just as Uber allows drivers to choose who they want to pickup, allowing a communication channel between the patient and doctor without knowing any information about them, and utilizing google maps to show nearby clients. Uber can found at [www.uber.com/ca/en/]( https://www.uber.com/ca/en/).
+
+Another product that is similar to our product is Life Call. It is a device that seniors use to directly contact Life Call operators who then evaluate the problem and dispatch the appropriate services to aid them. This is similar as it provides convenience of health support to the clients just as our product does. Ours will be more efficient as there is no central desk increasing delay by evaluating the situation, instead, it directly puts you hold with a doctor. Life call can be found at [www.lifecall.com](https://www.lifecall.com/).
