@@ -7,7 +7,7 @@
 #### (R)Roshaan Faisal, faisalro
 #### (W)Wen Tong, tongwen
 #### (C)Christine Taing, taingchr
-#### (A)Qurat ul Ain Afzal, afzalqur
+#### (A)Qurat-ul-ain Afzal, afzalqur
 #### (P)Parth Brahmbhatt, brahmb24 
 #### (I)Ibrahim Abdi, abdiibra
 ***
