@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Medical Form</string>
+    <string name="otherInfo">Enter other info</string>
+    <string name="Allergies">Enter any allergies</string>
+    <string name="Save">Save</string>
+    <string name="Back">Back</string>
+</resources>
