@@ -10,7 +10,7 @@ PRODUCT BACKLOG- **QUICK HELP**
 | As a regular user needing medical assistance, I want to be able to see all nearby hospitals and clinics to weigh out all my options | 2 | 3 |
 | As a regular user needing medical assistance, I want to have an option to call 911 to be able to call the ambulance immediately | 2 | 5 |
 | As a regular user needing medical assistance, I want to be able to choose how severe my condition is so that the most qualified doctor is able to help me | 3 | 13 |
-| As a skilled individual with medical certifications, I want to be able to receive notifications when there are people in need that I can help so that I am able to apply my skills to help people in need | 5 |
+| As a skilled individual with medical certifications, I want to be able to receive notifications when there are people in need that I can help so that I am able to apply my skills to help people in need | 2 | 5 |
 | As a user in need of medical assistance, I want to be able to display a panic mode so that a doctor is able to locate me faster | 1| 2|
 | As a skilled individual with medical certifications, I would like to find the patient as quickly as possible so that I have a higher chance of helping the patient. | 3 | 21 |
 | As a skilled individual with medical certifications, I can better assist a patient if I have clear knowledge about medical information about the patient | 1 | 1 |
