@@ -24,7 +24,7 @@
 | | Get Location of the doctor  | C V | 1 | 1 |
 | | Connect the location of user and doctor through polyline | C V | 2 |  |
 | Medical History Form | Front-end and Back-end | R A W | 48 |  |
-| | Make a template for mimicking the proposed UI design for the screen | A | 8 | 4 |
+| | Make a template for mimicking the proposed UI design for the screen | R A | 8 | 6 |
 | | Implement HTTP request handlers | R A W  | 2 |  |
 | | Routes to send information to the Database | R A W  | 2 |  |
 | | Connect with the DB and be able to save the user information | R A W  | 2 |  |
