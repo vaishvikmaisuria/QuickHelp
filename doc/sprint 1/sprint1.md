@@ -16,7 +16,7 @@
 
 
 | User Story Name | Task | Members | Estimate(hrs) | Actual(hrs) |
-| --- | --- | --- |
+| --- | --- | --- | --- | --- |
 | Location Direction | Given two location find the fastest route. | CV | 6 | 5 |
 | | UI of the Map View | CV  | 5 |  |
 | | Connect the Google Map API  | CV| 5 |  |
