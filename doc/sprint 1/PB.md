@@ -22,7 +22,7 @@ PRODUCT BACKLOG- **QUICK HELP**
 | As a user of the app, I want to be able to talk to other users and skilled individuals using this app so that I can be engaged with the community of this app | 1 | 1 |
 | As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 5 |
 | As a user in need of medical assistance, I want to be able to receive help when no doctors are available  by being guided them through simple medical procedures | 1 | 2 |
-
+| As a user of the app, I want to have all my information and saved on the cloud so that other doctors can acess it | 2 | 21 |
 
 PIVOTALTRACKER POINTS: 
   PivotalTracker does not support the quasi-fibonnaci system we used for scaling.

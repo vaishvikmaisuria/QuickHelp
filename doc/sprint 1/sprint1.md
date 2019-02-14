@@ -43,5 +43,5 @@
 | | Have regex in place to enforce a strong password | V P I  | 5 |  |
 | | Create CRC cards | V P I  | 8 | 6 |
 | | Create the Architecture Diagram| V P I  | 8 | 6 |
-
+| Cloud server | Create a server to handle backend tasks and get access to mongoDB database | P | 1 | 1 | 
 

@@ -1,9 +1,19 @@
 // importing dependencies
 const express = require("express");
 const mongoose = require("mongoose");
+const bodyparser = require("body-parser");
+
+const users = require("./Routes/User");
 
 // import key
 const db = require("./Config/keys").mongoURI;
+
+// create an express app
+const app = express();
+
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // connect to mongo server
 mongoose
@@ -11,8 +21,8 @@ mongoose
   .then(() => console.log("MongoDb server connected..."))
   .catch(err => console.log(err));
 
-// create an express app
-const app = express();
+// routes
+app.use("/user", users);
 
 // testing out the connection (Try this on your computer)
 app.get("/work", (req, res) =>
