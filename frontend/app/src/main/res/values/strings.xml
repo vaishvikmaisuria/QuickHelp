@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QuickHealth</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--<string name="google_maps_key">YOUR GOOGLE DIRECTIONS API KEY HERE</string>-->
+    <string name="google_maps_key">AIzaSyAw1MbqTKJPocgUYc8E17lH70MCkTCVHJI</string>
+</resources>
+
