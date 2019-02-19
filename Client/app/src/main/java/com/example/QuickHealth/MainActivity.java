@@ -24,110 +24,105 @@ public class MainActivity extends AppCompatActivity {
 
     private View view;
 
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final MongoClientURI mongoUri  = new MongoClientURI("mongodb://quickhelp:quickhelp1@ds123645.mlab.com:23645/quickhelp");
+        final MongoClientURI mongoUri = new MongoClientURI("mongodb://quickhelp:quickhelp1@ds123645.mlab.com:23645/quickhelp");
         MongoClient mongoClient = new MongoClient(mongoUri);
         DB db = mongoClient.getDB("MedicalHistoryForm");
         Set<String> collectionNames = db.getCollectionNames();
 
-        String json = "{";
-        
-        public void onCheckboxClicked(View view) {
-            boolean checked = ((CheckBox) this.view).isChecked();
 
-            switch(this.view.getId()) {
-                case R.id.checkBox1:
-                    if (checked) {
-                        json = json + "highBloodPressue: true";
-                    }else {
-                        json = json + "highBloodPressue: false";
-                    }
-                    break;
-                case R.id.checkBox2:
-                    if (checked) {
-                        json = json + "highCholesterol: true";
-                    }else {
-                        json = json + "highCholesterol: false";
-                    }
-                    break;
-
-                case R.id.checkBox3:
-                    if (checked) {
-                        json = json + "kidneyDisease: true";
-                    }else {
-                        json = json + "kidneyDisease: false";
-                    }
-                    break;
-                case R.id.checkBox4:
-                    if (checked) {
-                        json = json + "thyroidProblems: true";
-                    }
-                    else {
-                        json = json + "thyroidProblems: false";
-                    }
-                    break;
-                case R.id.checkBox5:
-                    if (checked) {
-                        json = json + "jointReplacement: true";
-                    }
-                    else {
-                        json = json + "jointReplacement: false";
-                    }
-                    break;
-                case R.id.checkBox6:
-                    if (checked) {
-                        json = json + "lungDisease: true";
-                    }
-                    else {
-                        json = json + "lungDisease: false";
-                    }
-                    break;
-                case R.id.checkBox7:
-                    if (checked) {
-                        json = json + "stroke:  true";
-                    }
-                    else {
-                        json = json + "stroke: false";
-                    }
-                    break;
-                case R.id.checkBox8:
-                    if (checked) {
-                        json = json + "asthmas: true";
-                    } else {
-                        json = json + "asthmas: false";
-                    }
-                    break;
-
-                case R.id.checkBox9:
-                    if (checked) {
-                        json = json + "heartProblem: true";
-                    }
-                    else {
-                        json = json + "heartProblem: false";
-                    }
-                    break;
-            }
-        }
         Button save = (Button) findViewById(R.id.med_save);
-        save.setOnClickListener(new View.OnClickListener(){
+        save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 new PostData(json).execute(String.valueOf(mongoUri));
             }
 
         });
+    }
 
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) this.view).isChecked();
 
-}
+        String json = "{";
+        switch (this.view.getId()) {
+            case R.id.checkBox1:
+                if (checked) {
+                    json = json + "highBloodPressue: true";
+                } else {
+                    json = json + "highBloodPressue: false";
+                }
+                break;
+            case R.id.checkBox2:
+                if (checked) {
+                    json = json + "highCholesterol: true";
+                } else {
+                    json = json + "highCholesterol: false";
+                }
+                break;
+
+            case R.id.checkBox3:
+                if (checked) {
+                    json = json + "kidneyDisease: true";
+                } else {
+                    json = json + "kidneyDisease: false";
+                }
+                break;
+            case R.id.checkBox4:
+                if (checked) {
+                    json = json + "thyroidProblems: true";
+                } else {
+                    json = json + "thyroidProblems: false";
+                }
+                break;
+            case R.id.checkBox5:
+                if (checked) {
+                    json = json + "jointReplacement: true";
+                } else {
+                    json = json + "jointReplacement: false";
+                }
+                break;
+            case R.id.checkBox6:
+                if (checked) {
+                    json = json + "lungDisease: true";
+                } else {
+                    json = json + "lungDisease: false";
+                }
+                break;
+            case R.id.checkBox7:
+                if (checked) {
+                    json = json + "stroke:  true";
+                } else {
+                    json = json + "stroke: false";
+                }
+                break;
+            case R.id.checkBox8:
+                if (checked) {
+                    json = json + "asthmas: true";
+                } else {
+                    json = json + "asthmas: false";
+                }
+                break;
+            case R.id.checkBox9:
+                if (checked) {
+                    json = json + "heartProblem: true";
+                } else {
+                    json = json + "heartProblem: false";
+                }
+                break;
+        }
+    }
+
     class getData extends AsyncTask<String, Void, String> {
         ProgressDialog pd = new ProgressDialog(MainActivity.this);
 
         @Override
-        protected void onPostExecute(String s){
+        protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
             Gson gson = new Gson();
@@ -143,8 +138,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String... params){
-            String stream=null;
+        protected String doInBackground(String... params) {
+            String stream = null;
             String urlString = params[0];
 
             HTTPDataHandler http = new HTTPDataHandler();
@@ -156,10 +151,12 @@ public class MainActivity extends AppCompatActivity {
     class PostData extends AsyncTask<String, String, String> {
         String json = params[0];
         ProgressDialog pd = new ProgressDialog(MainActivity.this);
+
         public PostData(String json) {
         }
+
         @Override
-        protected void onPostExecute(String s){
+        protected void onPostExecute(String s) {
             super.onPostExecute(s);
             pd.dismiss();
         }
@@ -173,11 +170,12 @@ public class MainActivity extends AppCompatActivity {
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
-        protected String doInBackground(String... params){
-            String urlString=params[0];
+        protected String doInBackground(String... params) {
+            String urlString = params[0];
 
             HTTPDataHandler http = new HTTPDataHandler();
             http.PostHTTPData(urlString, json);
             return "";
         }
     }
+}
