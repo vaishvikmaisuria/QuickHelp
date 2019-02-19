@@ -1,29 +1,74 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
-  username: String,
-  firstName: String,
-  lastName: String,
-  memStatus: String,
-  bloodType: String,
-  email: String,
-  password: String,
-  emergencyContact: String,
-  medicalHistory: MedicalHistoryForm,
-  otherMedicalConditions: String,
-  notifications: [Notification]
+  username: {
+    type: String,
+    required: true
+  },
+  firstName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  memStatus: {
+    type: String,
+    required: true
+  },
+  bloodType: {
+    type: String
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String
+  },
+  emergencyContact: {
+    type: String
+  },
+  medicalHistory: {
+    type: Object
+  },
+  otherMedicalConditions: {
+    type: String
+  },
+  notifications: {
+    type: Array
+  }
 });
 
 const MedicalHistoryForm = new mongoose.Schema({
-  highBloodPressue: Boolean,
-  highCholesterol: Boolean,
-  kidneyDisease: Boolean,
-  thyroidProblems: Boolean,
-  jointReplacement: Boolean,
-  lungDisease: Boolean,
-  stroke: Boolean,
-  asthmas: Boolean,
-  heartProblem: Boolean
+  highBloodPressue: {
+    type: Boolean
+  },
+  highCholesterol: {
+    type: Boolean
+  },
+  kidneyDisease: {
+    type: Boolean
+  },
+  thyroidProblems: {
+    type: Boolean
+  },
+  jointReplacement: {
+    type: Boolean
+  },
+  lungDisease: {
+    type: Boolean
+  },
+  stroke: {
+    type: Boolean
+  },
+  asthmas: {
+    type: Boolean
+  },
+  heartProblem: {
+    type: Boolean
+  }
 });
 
 const Notification = new mongoose.Schema({
