@@ -1,1 +1,6 @@
 /build
+*.iml
+gradle*
+*.properties
+/lib
+pro*

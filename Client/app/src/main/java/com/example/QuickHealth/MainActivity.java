@@ -16,30 +16,25 @@ import com.mongodb.DB;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
-import java.lang.reflect.Type;
-import java.security.cert.Extension;
 import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
     private View view;
-
+    String json = "{";
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final MongoClientURI mongoUri = new MongoClientURI("mongodb://quickhelp:quickhelp1@ds123645.mlab.com:23645/quickhelp");
-        MongoClient mongoClient = new MongoClient(mongoUri);
-        DB db = mongoClient.getDB("MedicalHistoryForm");
-        Set<String> collectionNames = db.getCollectionNames();
 
 
         Button save = (Button) findViewById(R.id.med_save);
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                onCheckboxClicked(v);
                 new PostData(json).execute(String.valueOf(mongoUri));
             }
 
@@ -49,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     public void onCheckboxClicked(View view) {
         boolean checked = ((CheckBox) this.view).isChecked();
 
-        String json = "{";
         switch (this.view.getId()) {
             case R.id.checkBox1:
                 if (checked) {
@@ -118,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    class getData extends AsyncTask<String, Void, String> {
+    /*class getData extends AsyncTask<String, Void, String> {
         ProgressDialog pd = new ProgressDialog(MainActivity.this);
 
         @Override
@@ -126,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(s);
 
             Gson gson = new Gson();
-            Type ListType = new TypeToken<List<User>>
+            Type ListType = new TypeToken<List<User>>;
             pd.dismiss();
         }
 
@@ -146,10 +140,9 @@ public class MainActivity extends AppCompatActivity {
             http.getHTTPData(urlString);
             return stream;
         }
-    }
+    }*/
 
     class PostData extends AsyncTask<String, String, String> {
-        String json = params[0];
         ProgressDialog pd = new ProgressDialog(MainActivity.this);
 
         public PostData(String json) {
