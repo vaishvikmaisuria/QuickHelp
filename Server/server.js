@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
 
-const users = require("./Routes/User");
+const users = require("./Routes/user");
 
 // import key
 const db = require("./Config/keys").mongoURI;
@@ -12,8 +12,8 @@ const db = require("./Config/keys").mongoURI;
 const app = express();
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(bodyparser.json());
 
 // connect to mongo server
 mongoose
