@@ -2,6 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+const medInfoSave= require("./Routes/medInfo");
+
 // import key
 const db = require("./Config/keys").mongoURI;
 
@@ -18,6 +20,8 @@ const app = express();
 app.get("/work", (req, res) =>
   res.json({ work: "THE SERVER IS WORKING :D!!!!" })
 );
+
+app.use("/medInfo", medInfoSave);
 
 // listening to port 3000
 app.listen(3000, () => console.log(`Server running on port 3000`));

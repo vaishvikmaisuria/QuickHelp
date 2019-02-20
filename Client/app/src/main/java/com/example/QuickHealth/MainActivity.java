@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
                 onCheckboxClicked(v);
                 new PostData(json).execute(String.valueOf(mongoUri));
             }
-
         });
     }
 

@@ -47,5 +47,6 @@ UserSchema.statics.findByEmail = function(email) {
 
 
 const User = mongoose.model('User', UserSchema);
+const medInfo = mongoose.model('medInfo', MedicalHistoryForm);
 
-module.exports = { User };
+module.exports = { User, medInfo };
