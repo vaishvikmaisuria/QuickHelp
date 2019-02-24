@@ -52,8 +52,8 @@
       <file leaf-file-name="SOSsignal.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/SOSsignal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="129" column="12" lean-forward="true" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="59" />
+            <state relative-caret-position="337">
+              <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4396#4654#0" expanded="true" />
@@ -86,8 +86,21 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="97" column="9" selection-start-line="83" selection-start-column="8" selection-end-line="97" selection-end-column="9" />
+            <state relative-caret-position="1034">
+              <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+              <folding>
+                <element signature="e#812#1507#0" expanded="true" />
+                <element signature="e#1091#1110#0" expanded="true" />
+                <element signature="e#1235#1259#0" expanded="true" />
+                <element signature="e#1388#1416#0" expanded="true" />
+                <element signature="e#1506#1507#0" expanded="true" />
+                <element signature="e#1896#2024#0" expanded="true" />
+                <element signature="e#2023#2024#0" expanded="true" />
+                <element signature="e#2065#2191#0" expanded="true" />
+                <element signature="e#2190#2191#0" expanded="true" />
+                <element signature="e#2231#2379#0" expanded="true" />
+                <element signature="e#2378#2379#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2452,7 +2465,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="Nexus_5X_API_28" />
+    <property name="device.picker.selection" value="931d9bc9" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
   </component>
@@ -2688,6 +2701,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="81" column="32" selection-start-line="81" selection-start-column="4" selection-end-line="81" selection-end-column="32" />
+          <folding>
+            <element signature="e#812#1507#0" expanded="true" />
+            <element signature="e#1091#1110#0" expanded="true" />
+            <element signature="e#1235#1259#0" expanded="true" />
+            <element signature="e#1388#1416#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1896#2024#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2065#2191#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2231#2379#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2719,6 +2745,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="70" selection-start-line="70" selection-end-line="70" />
+          <folding>
+            <element signature="e#812#1507#0" expanded="true" />
+            <element signature="e#1091#1110#0" expanded="true" />
+            <element signature="e#1235#1259#0" expanded="true" />
+            <element signature="e#1388#1416#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1896#2024#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2065#2191#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2231#2379#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2779,6 +2818,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="36" selection-end-column="46" />
+          <folding>
+            <element signature="e#812#1507#0" expanded="true" />
+            <element signature="e#1091#1110#0" expanded="true" />
+            <element signature="e#1235#1259#0" expanded="true" />
+            <element signature="e#1388#1416#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1896#2024#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2065#2191#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2231#2379#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2891,13 +2943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="97" column="9" selection-start-line="83" selection-start-column="8" selection-end-line="97" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/httpRequestHelpers/httpPostRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2905,10 +2950,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1034">
+          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+          <folding>
+            <element signature="e#812#1507#0" expanded="true" />
+            <element signature="e#1091#1110#0" expanded="true" />
+            <element signature="e#1235#1259#0" expanded="true" />
+            <element signature="e#1388#1416#0" expanded="true" />
+            <element signature="e#1506#1507#0" expanded="true" />
+            <element signature="e#1896#2024#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2065#2191#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2231#2379#0" expanded="true" />
+            <element signature="e#2378#2379#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/quickhealth/quickhealth/SOSsignal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="129" column="12" lean-forward="true" selection-start-line="129" selection-start-column="12" selection-end-line="129" selection-end-column="59" />
+        <state relative-caret-position="337">
+          <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#4396#4654#0" expanded="true" />

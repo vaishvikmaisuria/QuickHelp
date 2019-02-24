@@ -119,8 +119,8 @@ public class SOSsignal extends AppCompatActivity implements View.OnClickListener
 
 
             //Some url endpoint that you may have
-            //String myUrl = "https://quick-health.herokuapp.com";
-            String myUrl = "http://localhost:3000";
+            String myUrl = "https://quick-health.herokuapp.com";
+            //String myUrl = "http://localhost:3000";
 
             //String to place our result in
             String result;
@@ -128,7 +128,7 @@ public class SOSsignal extends AppCompatActivity implements View.OnClickListener
             //Create the Json Object
             //JSONObject sosLocation = new JSONObject();
             Map<String, String> postData = new HashMap<>();
-            postData.put("uid", "user1");
+            postData.put("uid", "user2");
             postData.put("longitude", longitude);
             postData.put("latitude", lattitude);
 
@@ -136,14 +136,9 @@ public class SOSsignal extends AppCompatActivity implements View.OnClickListener
             httpPostRequest task = new httpPostRequest(postData);
 
             //Perform the doInBackground method, passing in our url
-            try {
-                result = String.valueOf(task.execute(myUrl + "/newSOS").get());
-                Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
+
+            task.execute(myUrl + "/newSOS");
+
 
         }
     }
