@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyparser = require("body-parser");
-
+const sos = require("./Routes/Sos");
 const users = require("./Routes/user");
 
 // import key
@@ -23,13 +23,17 @@ mongoose
 
 // routes
 app.use("/user", users);
+app.use("/sos", sos);
+
 
 // testing out the connection (Try this on your computer)
-app.get("/work", (req, res) =>
-  res.json({ work: "THE SERVER IS WORKING :D!!!!" })
-);
+
+app.get("/work", (req, res) => {
+  res.send({ work: "THE SERVER IS WORKING :D!!!!" })
+});
+
 
 const port = process.env.PORT || 3000;
 
 // listening to port 3000
-app.listen(port, () => console.log(`Server running on port 3000`));
+app.listen(port, () => console.log(`Server running on port: ` + port));
