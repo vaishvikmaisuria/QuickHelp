@@ -1,8 +1,8 @@
 *NOTE: System design document underwent no changes this phase. A single paragraph explanation- as the professor required- has been attached to the bottom of the document.*
 
-# SCRUM Retrospective Meeting 2- QuickHealth
+# Release 2 Planning Meeting - QuickHealth
 ---
-##### Feb 22th 2019 | 2:00PM - 5:00PM
+##### Feb 25th 2019 | 4:00PM - 6:00PM
 ***
 ### Participants:
 ***
@@ -18,10 +18,7 @@
 ### Unfinished tasks:
 
 
-
 As before, these tasks are accordingly represented in PivotalTracker. 
-
-
 
 ### Meeting Overview:
 
@@ -62,8 +59,11 @@ As before, these tasks are accordingly represented in PivotalTracker.
 
 ### SYSTEM DESIGN EXPLANATION:
 
-
-Our System design Document underwent no changes. As the majority of this sprint was dedicated to finishing user stories picked in the previous sprint. Therefore, the previous design that was created was perfect and did not require any change. Also, this means that there were no changes made to the underlying project architecture. Instead, out development as mainnly based on anactinf the CRC's design of sprint 1. As we start to better integreate and combine features through the navigation bar, we assume we will change out system design, as group member have decided on possible new features and updates ona few features causing out CRC cards to be updated and certain characteristics of out DAO model to be upgraded to improve out code. For now, our objective remains to implement our original design idea within the MEAN framework.
+Our System design Document underwent no changes. 
+As the majority of this sprint was dedicated to finishing user stories picked in the previous sprint. 
+Therefore, the previous design that was created was perfect and did not require any change. 
+Also, this means that there were no changes made to the underlying project architecture. Instead, out development as mainly based on enacting the CRC's design of sprint 1. 
+As we start to better integrate and combine features through the navigation bar, we assume we will change out system design, as group members have decided on possible new features and updates on a few features causing our CRC cards to be updated and certain characteristics of our DAO model to be upgraded to improve our code. For now, our objective remains to implement our original design idea within the MEAN framework.
 
 
 
