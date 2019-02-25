@@ -22,24 +22,21 @@ As before, these tasks are accordingly represented in PivotalTracker.
 
 ### Meeting Overview:
 
-1. Our product owner was chosen to be Vaishvik Maisuria. The product owner states the purpose behind the project and described what his vision of the finish product will be. The team shared the product owner's enthusiasm.
+In this meeting, the QUickHealth team reflected on Sprint 1, and what went well and what didn't. The entire team was present for the meeting.
 
-2. All team members were able to attend the meeting.  
+We realized that we over commited in sprint1, and assigned more user stories that we were able to complete. As we needed to focus on learning the new technologies and trying to figure out how to assign tasks effectively
+This time, we agreed that we needed to focus on finishing user stories that we have already asigned in full before starting other user stories.
 
-3. The product owner splits the team into sub teams to accomplish specific features. Team 1 includes Christine and Vaishvik. Team 2 includes Roshaan, Ainy, and Wen. Team 3 includes Parth and Ibrahim.
+In our reflection, we identified several strengths of our developmental approach from sprint1 which we agreed to continue:
+- Consistent votes and in depth conversations about implementation to ensure all members voices are heard and the best methadology is adapted
+- Ensuring all team member shares the same coding environment and have all keys and urls required to collaborate on all environments
+- Ensuring all members share the deadline by which they will complete their assigned tasks and verify when all tasks are completed
+- Ensuring product maintains a consistent with the userInterface and don.md from sprint0
 
-4. Team 1 was assigned to work on the release planning meeting and the feature which deals with finding the direction between two locations. This group is also responsible for editing and helping team 3 with system design.
+The main reason for our negative work experiences was due to the adaptation to new technology. The subgroups working on the account registration, profile setup and medical history form user stories was unable to implement MongoDB in time, so those user stories were not able to be implemented in time for sprint 1.
+We also decided that members from different teams need to communicate and work together more as a lot of members were facing the same problems, and working together allows us to come up with a solution faster.
 
-5. Team 2 was assigned to work on user stories and maintaining Pivotal Tracker. They are responsible for correctly formulating user stories, recording all PB.md user stories on Pivotal Tracker, breaking down user stories into subtasks, allocating proper estimation of points and prioritizing user stories. They are also assigned to implement the user interface, and the routes for the medical history form. 
-
-6. Team 3 was assigned to work on system design. They are also responsible for login and registration interface and to connect them to the server.
-
-7. We have reviewed the definition of Done and have not added any new features. However, we have decided to break down a few features into smaller and less complex tasks as we anticipate that these features will take longer than expected. 
-
-8. Discussions about technologies we need for the project were made. Team members who are more experienced with the technologies help other members gain a working knowledge of them so that they can begin on coding the features they have chosen to implement.
-
-9. The team communicated clearly and effciently. We were able accomodate everyone's suggestions by allowing everyone to speak one-by-one and popular vote to resolve decisions. 
-
+Our best experiences included the completion of Location Directions. It was motivating to be able to see the working results. The system architecture diagram was very helpful in understanding the technologies available to us and how they interact. Finally, finishing our initial CRC model provided us one of our best experiences in sprint 1 as well. After that was designed, our group envisioned our code base with a much greater clarity than before, and it was a fun experience coding with it on hand
 
 ### Release Goals and Plans 
 1. For this release, we have selected to focus on the following user stories: 
@@ -48,14 +45,15 @@ As before, these tasks are accordingly represented in PivotalTracker.
 	- Unique custom username 
 	- Secure password 
 	- Profile setup
+	- Registration
 
-2. The main focus will be on laying out the first layer for the project. That is laying out the registeration form and profile page and combining it other core features. i.e ....
+2. The main focus will be finishing all user stories assigned in their individual branches, and combining them into one executable application on the main branch. This ensures that all members are fully aware how their feature interacts with the main application and solidifies their understanding of all user stories. Combing all user stories as soon as they are finished prevents all merging from being pushed to later sprints.
 
-3. Our plan for this release is to set up the.......... , implement the backend for basic authentication, and testing out the APIs we need to get one of our core features working, i.e., 
+3. Our plan for this release is to implement the backend for basic authentication, and testing out the APIs we need to our core features working. The user should be able to go through the whole registration and sign in process with ease and security.
 
 
 ### Meeting Conclusion:
-
+QUickHealths first SCRUM meeting was a successful gathering where our team members were able to find our bearings again. We noted our past mistakes and attempted to ensure we would not repeat them in the future. 
 
 ### SYSTEM DESIGN EXPLANATION:
 
