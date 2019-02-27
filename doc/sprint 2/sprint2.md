@@ -22,7 +22,7 @@
 | | Connect the Google Map API  | C V| 1 | 1  |
 | | Location on Map | C V  | 1 | 1 |
 | | Get Location of the doctor  | C V | 1 | 1 |
-| | Connect the location of user and doctor through polyline | C V | 2 |  |
+| | Connect the location of user and doctor through polyline | C V | 2 | 4 |
 | Medical History Form | Front-end and Back-end | R A W | 48 |  |
 | | Make a template for mimicking the proposed UI design for the screen | R A | 8 | 6 |
 | | Implement HTTP request handlers | R A W  | 2 |  |
@@ -44,4 +44,9 @@
 | | Create CRC cards | V P I  | 8 | 6 |
 | | Create the Architecture Diagram| V P I  | 8 | 6 |
 | Cloud server | Create a server to handle backend tasks and get access to mongoDB database | P | 1 | 1 | 
-
+| SOS Signal | As a skilled individual with medical certifications, I would like to find the patient as quickly as possible so that i have a higher chance of helping the patient. | C V | 7 | 6 |
+| | Create the button and textbox | C V  | 1 | 1 |
+| | Get the Location of the device | C V | 8 | 5  |
+| | Create the route to the server for POST Method | C V  | 4 | 4 |
+| | Code to send Http request to server | C V | 5 | 6 |
+| | UI Update | C V W | 4 | 4 |
