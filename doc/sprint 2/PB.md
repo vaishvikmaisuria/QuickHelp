@@ -12,17 +12,15 @@ PRODUCT BACKLOG- **QUICK HELP**
 | As a regular user needing medical assistance, I want to be able to choose how severe my condition is so that the most qualified doctor is able to help me | 3 | 13 |
 | As a skilled individual with medical certifications, I want to be able to receive notifications when there are people in need that I can help so that I am able to apply my skills to help people in need | 2 | 5 |
 | As a user in need of medical assistance, I want to be able to display a panic mode so that a doctor is able to locate me faster | 1| 2|
-| As a skilled individual with medical certifications, I would like to find the patient as quickly as possible so that I have a higher chance of helping the patient. | 3 | 21 |
 | As a skilled individual with medical certifications, I can better assist a patient if I have clear knowledge about medical information about the patient | 1 | 1 |
-| As a regular user, I want to be able to cancel the SOS signal if help from other sources was received so that I don't waste a skilled individual's time | 2 | 5 |
+| As a regular user, I want to be able to cancel the SOS signal if help from other sources was received so that I don't waste a skilled individual's time | 2 | 13 |
 | As a skilled individual with medical certifications, I want to be able to accept or dismiss emergency or help notifications, so that i can inform the app when i am able to help them | 3 | 13 |
 | As a user who received medical assistance, I want to be able to rate the doctor that helped me to credit them fro their work | 1 | 1 |
 | As a skilled individual with medical certifications, I want to be able to select if I'm available by selecting online or offline so that I can help others when I'm free | 2 | 5 |
 | As a user of the app, I want to be able to update my profile and personalize my account so other users are better able to know about me | 1 | 2 |
 | As a user of the app, I want to be able to talk to other users and skilled individuals using this app so that I can be engaged with the community of this app | 1 | 1 |
-| As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 5 |
+| As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 13 |
 | As a user in need of medical assistance, I want to be able to receive help when no doctors are available  by being guided them through simple medical procedures | 1 | 2 |
-| As a user of the app, I want to have all my information and saved on the cloud so that other doctors can acess it | 2 | 21 |
 
 PIVOTALTRACKER POINTS: 
   PivotalTracker does not support the quasi-fibonnaci system we used for scaling.
