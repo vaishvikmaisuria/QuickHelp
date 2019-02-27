@@ -9,6 +9,55 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".Medical_History2"
+            android:label="@string/medical_history"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+
+        </activity>
+        <activity
+            android:name=".Register"
+            android:label="@string/register"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Profile"
+            android:label="@string/profile"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".SOS_Signal"
+            android:label="@string/sos_signal"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Medical_History"
+            android:label="@string/medical_history"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Login"
+            android:label="@string/login"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.profile.MainActivity" />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
