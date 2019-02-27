@@ -49,4 +49,4 @@
 | | Get the Location of the device | C V | 8 | 5  |
 | | Create the route to the server for POST Method | C V  | 4 | 4 |
 | | Code to send Http request to server | C V | 5 | 6 |
-| | UI Update | C V W | 4 | 4 |
+| | UI Update | C V W | 4 |  |
