@@ -29,6 +29,7 @@
 | | Routes to send information to the Database | R A W  | 2 |  |
 | | Connect with the DB and be able to save the user information | R A W  | 2 |  |
 | | Create database schema for medical history form | P  | 2 | 2 |
+| | UI of the Medical History Form View | W  | 4 | 4 |
 | Profile Setup | Make a form-must be pre populated, link it to the database | R A W | 24 |  |
 | | UI of the Profile Setup View | W  | 4 | 4 |
 | | Implement request handlers | R A W  | 8 |  |
@@ -49,4 +50,4 @@
 | | Get the Location of the device | C V | 8 | 5  |
 | | Create the route to the server for POST Method | C V  | 4 | 4 |
 | | Code to send Http request to server | C V | 5 | 6 |
-| | UI Update | C V W | 4 |  |
+| | UI Update | C V W | 4 | 4 |
