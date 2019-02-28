@@ -50,11 +50,11 @@ Our best experiences included the completion of the location direction feature. 
 
 2. The main focus will be to finish all user stories assigned in each subteam's individual branches, and combine them into one executable application on the main branch. This ensures that all members are fully aware of how their feature interacts with the main application and solidifies their understanding of all user stories. Merging completed user stories as soon as possible will allow us to resolve any merge conflicts early on in the development process instead of pushing it into later sprints.
 
-3. Our plan for this release is to implement the backend for basic authentication, and continue to implement the core feature, adding on more functionalities to it. The user should be able to go through the whole registration and sign in process with ease and security. Since we were able to get the direction of the user in sprint 1, the user should now be able to send a SOS signal with indications of their location, to the server and stored on the application's database.
+3. Our plan for this release is to implement the backend for basic authentication, and continue to implement the core feature, i.e., adding on more functionalities to it. The user should be able to go through the whole registration and sign in process with ease and security. Since we were able to get the direction of the user in sprint 1, the user should now be able to send an SOS signal, with indications of their location, to the server and stored on the application's database.
 
 
 ### Meeting Conclusion:
-QuickHealth's first SCRUM meeting was a successful gathering where our team members were able to find our bearings again. We noted our past mistakes and attempted to ensure we would not repeat them in the future. 
+Quick Health's first SCRUM meeting was a successful gathering where our team members were able to find our bearings again. We noted our past mistakes and attempted to ensure we would not repeat them in the future. 
 
 ### SYSTEM DESIGN EXPLANATION:
 
