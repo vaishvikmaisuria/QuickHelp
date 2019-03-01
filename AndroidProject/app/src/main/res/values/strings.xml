@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">profile</string>
+    <string name="regular_member">Regular Member</string>
+    <string name="profile">Profile</string>
+    <string name="member_since">Member since</string>
+    <string name="login">Login</string>
+    <string name="medical_history">Medical History</string>
+    <string name="sos_signal">SOS Signal</string>
+    <string name="name1">Name</string>
+    <string name="update_member_status">Update Member Status</string>
+    <string name="emergency_contact1">Emergency Contact</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="online">Online</string>
+    <string name="register">Register</string>
+    <string name="first_name"> First Name</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!--<string name="google_maps_key">YOUR GOOGLE DIRECTIONS API KEY HERE</string>-->
+    <string name="google_maps_key">AIzaSyAw1MbqTKJPocgUYc8E17lH70MCkTCVHJI</string>
+</resources>
