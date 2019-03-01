@@ -30,17 +30,17 @@ public class SOS_Signal extends AppCompatActivity implements View.OnClickListene
     Button button;
     TextView textView;
     LocationManager locationManager;
-    String lattitude,longitude;
+    String lattitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sossignal);
+        setContentView(R.layout.activity_sos__signal);
 
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
-        textView = (TextView)findViewById(R.id.text_location);
-        button = (Button)findViewById(R.id.button_location);
+        textView = (TextView) findViewById(R.id.text_location);
+        button = (Button) findViewById(R.id.button_location);
 
         button.setOnClickListener(this);
 
@@ -62,11 +62,11 @@ public class SOS_Signal extends AppCompatActivity implements View.OnClickListene
     }
 
     private void getLocation() throws JSONException {
-        if (ActivityCompat.checkSelfPermission(SOSsignal.this, Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
-                (SOSsignal.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                (this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
-            ActivityCompat.requestPermissions(SOSsignal.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
         } else {
             Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
@@ -153,3 +153,4 @@ public class SOS_Signal extends AppCompatActivity implements View.OnClickListene
         final AlertDialog alert = builder.create();
         alert.show();
     }
+}

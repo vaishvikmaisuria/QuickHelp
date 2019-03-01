@@ -30,12 +30,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
     public void gotorequest(View view) {
         Log.d(LOG_TAG, "Request button clicked!");
 
         Intent intent = new Intent(this, SOS_Signal.class);
+        startActivity(intent);
+    }
+
+    public void gotomap(View view) {
+        Log.d(LOG_TAG, "Request button clicked!");
+
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
 
@@ -50,13 +55,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG, "Register button clicked!");
 
         Intent intent = new Intent(this, Register.class);
-        startActivity(intent);
-    }
-
-    public void gotomedicalhistory(View view) {
-        Log.d(LOG_TAG, "Medical History button clicked!");
-
-        Intent intent = new Intent(this, Medical_History.class);
         startActivity(intent);
     }
 

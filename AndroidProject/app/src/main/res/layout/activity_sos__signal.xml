@@ -7,7 +7,7 @@
     tools:context=".SOS_Signal">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/button_location"
         android:layout_width="213dp"
         android:layout_height="54dp"
         android:layout_centerHorizontal="true"
@@ -23,5 +23,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.438" />
+
+
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="16dp"/>
 
 </android.support.constraint.ConstraintLayout>
