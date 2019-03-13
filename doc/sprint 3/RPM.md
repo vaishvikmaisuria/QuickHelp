@@ -36,6 +36,8 @@ Consequently, sprint 2 provided us with the most significant highlights of the p
 	- navigation bar
 	- medical form
 	- personal information page
+	- emergency contact page
+	- sign out
 
 2. The main focus will be to finish all user stories assigned in each subteam's individual branches, and combine them into one executable application on the main branch. This ensures that all members are fully aware of how their feature interacts with the main application and solidifies their understanding of all user stories. Merging completed user stories as soon as possible will allow us to resolve any merge conflicts early on in the development process instead of pushing it into later sprints.
 
