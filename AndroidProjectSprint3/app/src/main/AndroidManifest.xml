@@ -36,6 +36,11 @@
             android:label="@string/main_activity">
 
         </activity>
+        <activity
+            android:name=".PersonalInfo"
+            android:label="@string/user_info">
+
+        </activity>
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

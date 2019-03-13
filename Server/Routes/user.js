@@ -26,4 +26,14 @@ router.post("/register", (req, res) => {
   });
 });
 
+router.get("/userInfo/:Username", (req, res) => {
+  const username = req.params.Username;
+  User.findOne({ username : username }).then(user => {
+    console.log("us: "+username);
+    if (user) {
+      res.send({ user });
+    }
+  });
+});
+
 module.exports = router;

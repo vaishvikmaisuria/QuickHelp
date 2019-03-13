@@ -127,7 +127,7 @@
         android:importantForAutofill="no"
         android:text="@string/name1"
         android:textColor="@color/maincolour"
-        app:layout_constraintBottom_toTopOf="@+id/editText3"
+        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +195,7 @@
         app:srcCompat="@android:drawable/ic_menu_myplaces" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
