@@ -24,12 +24,9 @@ As before, these tasks are accordingly represented in PivotalTracker.
 
 In this meeting, the QuickHealth team reflected on Sprint 1, and what went well and what didn't. The entire team was present for the meeting (from March 11, 2019, 4:00PM - 6:00 PM).
 
-After reaching our goals successfully from the previoius sprint, our team was motivated to continue developing the app at a rapid pace. Since all our members were expecting a heavy workload from other courses this sprint, all members knew how many user stories they are able to assign to ensure all work is completed by the end of the sprint. Using knowledge from previous copleted user stories, we were able to start implemnting this sprint's user stories quickly. 
+After successfully meeting our goals in the previoius sprint, our team is motivated to continue developing the app at a rapid pace. For this particular sprint, all of our members had obligations for other courses, so our workloads were heavier than usual. Therefore, each of our members assigned just enough user stories that we could handle to ensure that our work is completed by the end of the sprint. Leveraging what we've learned from completing previous user stories, our team continued to build more features.
 
-As all memebrs had a tight schedule, the memebrs chose the user stories they are most comfortable to implement.
-During our discussion, we realized that we were on the right track by learning most of the required technologies earlier on, and now nned to shoft focus to ensure we can implement as many features as possible for the upcoming sprints.
-
-Consequently, sprint 2 provided us with the most significant highlights of the project so far. It was able to give the group an idea of how to continue working on the project successfully, even under a large work load. We learned to become comfortable in assigne=ing tasks to memebrs that we know are capable of completing them, and will follow through with the task. Therefore, our team is ready is tackle all essential features of the app in the upcoming sprints.
+Although sprint 2 was particularly rough due to tight schedules we have for our other courses, this sprint has provided us with the most significant highlights of the project so far. We were able to meet sprint goals even under situations of high stress, and gain insight what it truly means to work in a team. We learned to comfortably assign tasks to members that we know are capable of completing them, and follow through with the task. Therefore, our team is ready is tackle all essential features of the app in the upcoming sprints.
 
 ### Release Goals and Plans 
 1. For this release, we have selected to focus on the following user stories: 
@@ -50,9 +47,7 @@ Quick Health's third SCRUM meeting was a successful gathering where our team mem
 ### SYSTEM DESIGN EXPLANATION:
 
 Our System design Document underwent no changes. 
-As the majority of this sprint was dedicated to finishing user stories picked in the previous sprint. 
-Therefore, the previous design that was created was perfect and did not require any change. 
-Also, this means that there were no changes made to the underlying project architecture. Instead, our development was mainly based on enacting the CRC's design of sprint 1. 
+As the majority of this sprint was dedicated to finishing user stories picked in the previous sprint. Therefore, the previous design that was created was perfect and did not require any change. Also, this means that there were no changes made to the underlying project architecture. Instead, our development was mainly based on enacting the CRC's design of sprint 1. 
 As we start to better integrate and combine features through the navigation bar, we assume we will change our system design, as group members have decided on possible new features and updates on a few features causing our CRC cards to be updated and certain characteristics of our DAO model to be upgraded to improve our code. For now, our objective remains to implement our original design idea using the techincal stack we intend to use which was Android Studio, MongoDB, Express, and Node.
 
 
