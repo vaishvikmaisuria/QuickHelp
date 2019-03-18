@@ -18,7 +18,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <!--<string name="google_maps_key">YOUR GOOGLE DIRECTIONS API KEY HERE</string>-->
-    <string name="google_maps_key">AIzaSyAw1MbqTKJPocgUYc8E17lH70MCkTCVHJI</string>
+    <string name="google_maps_key">AIzaSyBcDEBix4ex3C_PIAZdfZhAlU0Sn5ORK78</string>
     <string name="title_activity_map_">map_Activity</string>
     <string name="user_info">Personal Information</string>
 </resources>

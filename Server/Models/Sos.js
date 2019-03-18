@@ -5,6 +5,13 @@ const SosSchema = new mongoose.Schema({
     	type: String,
     	required: true
     },
+    helperID: {
+    	type: String,
+    },
+    injuryDetails: {
+        type: String
+    }
+    ,
     longitude: {
     	type: Number,
     	required: true

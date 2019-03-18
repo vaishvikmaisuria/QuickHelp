@@ -50,6 +50,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         textView = (TextView) v.findViewById(R.id.text_location);
         button = (Button) v.findViewById(R.id.button_location);
 
+
         button.setOnClickListener(this);
 
         return v;
@@ -71,6 +72,11 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
+
+
+        Intent intent = new Intent(getActivity(), additional_Details.class);
+        startActivity(intent);
+
     }
 
 

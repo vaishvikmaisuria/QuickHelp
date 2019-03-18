@@ -27,7 +27,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         View v = inflater.inflate(R.layout.activity_profile, container, false);
 
         setContentView(R.layout.activity_profile);
