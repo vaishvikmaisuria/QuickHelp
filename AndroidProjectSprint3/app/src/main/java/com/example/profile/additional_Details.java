@@ -1,6 +1,7 @@
 package com.example.profile;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.Button;
 public class additional_Details extends AppCompatActivity {
 
     private Button updatebtn;
+    private Button callbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +26,26 @@ public class additional_Details extends AppCompatActivity {
                 gohelpseverity(v);
             }
         });
+
+        callbtn = (Button) findViewById(R.id.button_call);
+
+        callbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // used to call 911, but calling a friend instead
+                // wen's number
+                emergency_call("4164514846");
+            }
+        });
     }
 
     public void gohelpseverity(View view) {
 
         Intent intent = new Intent(this, help_severity.class);
         startActivity(intent);
+    }
+
+    private void emergency_call(final String phoneNumber) {
+        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
 }
