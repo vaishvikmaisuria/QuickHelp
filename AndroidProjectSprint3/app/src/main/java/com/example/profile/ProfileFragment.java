@@ -21,6 +21,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private TextView name;
     private TextView username;
+    public static final int PICK_IMAGE = 1;
 
     @Nullable
     @Override
@@ -37,9 +38,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         Button button = (Button) v.findViewById(R.id.button8);
         Button personalInfo = (Button) v.findViewById(R.id.button6);
+        Button updateMember = (Button) v.findViewById(R.id.button9);
 
         button.setOnClickListener(this);
         personalInfo.setOnClickListener(this);
+        updateMember.setOnClickListener(this);
 
         return v;
 
@@ -61,6 +64,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 Intent intent = new Intent(getActivity(), PersonalInfo.class);
                 startActivity(intent);
             }
+            case R.id.button9: {
+                // is app compact
+                Intent intent = new Intent(getActivity(), SendEmail.class);
+                startActivity(intent);
+                //ValidateProfessional val = new ValidateProfessional();
+
+                //break;
+            }
         }
     }
 
@@ -73,4 +84,17 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
 
     }
+    private void uploadCredentials() {
+        Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
+        getIntent.setType("image/*");
+
+        Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickIntent.setType("image/*");
+
+        Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
+        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
+
+        startActivityForResult(chooserIntent, PICK_IMAGE);
+    }
+
 }
