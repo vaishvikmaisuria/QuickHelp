@@ -45,7 +45,6 @@ public class Login extends AppCompatActivity {
         super.onDestroy();
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

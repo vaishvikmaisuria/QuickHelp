@@ -32,6 +32,15 @@ public class EmergencyInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.emergency_contact);
 
+        name = (EditText) findViewById(R.id.name);
+        relationship = (EditText) findViewById(R.id.relationship);
+        address = (EditText) findViewById(R.id.address);
+        work = (EditText) findViewById(R.id.work);
+        home = (EditText) findViewById(R.id.home);
+        cell = (EditText) findViewById(R.id.cell);
+
+        updateFields(User.User1);
+
         Button sender = (Button) findViewById(R.id.updateEmr);
         sender.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +93,20 @@ public class EmergencyInfo extends AppCompatActivity {
             rootView = getWindow().getDecorView().getRootView();
 
         return rootView;
+    }
+
+    private void updateFields(JSONObject user) {
+        System.out.println(user.toString());
+        try {
+            name.setText(user.get("contactName").toString());
+            relationship.setText(user.get("relationship").toString());
+            work.setText(user.get("work").toString());
+            address.setText(user.get("address").toString());
+            home.setText(user.get("home").toString());
+            cell.setText(user.get("cell").toString());
+
+        }catch (JSONException e){
+            return;
+        }
     }
 }
