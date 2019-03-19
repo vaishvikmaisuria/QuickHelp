@@ -5,6 +5,8 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.profile.MainActivity;
+import com.example.profile.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -16,11 +18,11 @@ import java.util.List;
 
 
 public class PointsParser extends AsyncTask<String, Integer, List<List<HashMap<String, String>>>> {
-    com.example.profile.directionhelpers.TaskLoadedCallback taskCallback;
+    MapFragment taskCallback;
     String directionMode = "driving";
 
-    public PointsParser(Context mContext, String directionMode) {
-        this.taskCallback = (com.example.profile.directionhelpers.TaskLoadedCallback) mContext;
+    public PointsParser(MapFragment mContext, String directionMode) {
+        this.taskCallback = (MapFragment) mContext;
         this.directionMode = directionMode;
     }
 
@@ -82,7 +84,8 @@ public class PointsParser extends AsyncTask<String, Integer, List<List<HashMap<S
 
         // Drawing polyline in the Google Map for the i-th route
         if (lineOptions != null) {
-            //mMap.addPolyline(lineOptions);
+//            mMap.addPolyline(lineOptions);
+
             taskCallback.onTaskDone(lineOptions);
 
         } else {

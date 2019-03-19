@@ -4,9 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment
+    <com.google.android.gms.maps.MapView
         android:id="@+id/mapNearBy"
-        android:name="com.google.android.gms.maps.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@+id/rvToolbar"

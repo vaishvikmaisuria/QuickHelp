@@ -10,10 +10,16 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.profile.directionhelpers.TaskLoadedCallback;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 
 public class MainActivity extends AppCompatActivity {
-
+    public Polyline currentPolyline;
     private static final String LOG_TAG =
             MainActivity.class.getSimpleName();
 
@@ -62,6 +68,4 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
-
 }

@@ -64,7 +64,7 @@ public class map_Activity extends AppCompatActivity implements OnMapReadyCallbac
                 Log.d("place 1", place1.toString());
                 Log.d("place 2", place2.toString());
 
-                new FetchURL(map_Activity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+//                new FetchURL(map_Activity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
             }
         });
         if (ActivityCompat.checkSelfPermission(this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

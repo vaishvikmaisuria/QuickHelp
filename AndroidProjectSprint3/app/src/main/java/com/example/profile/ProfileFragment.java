@@ -29,7 +29,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         View v = inflater.inflate(R.layout.activity_profile, container, false);
 
-        setContentView(R.layout.activity_profile);
+//        setContentView(R.layout.activity_profile);
         name = (TextView) v.findViewById(R.id.nameTextView);
         username = (TextView) v.findViewById(R.id.username);
 
@@ -45,8 +45,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    private void setContentView(int activity_profile) {
-    }
+//    private void setContentView(int activity_profile) {
+//    }
 
     public  ProfileFragment() {}
 

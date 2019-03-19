@@ -3,6 +3,7 @@ package com.example.profile;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -15,110 +16,102 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.profile.directionhelpers.FetchURL;
-import com.example.profile.directionhelpers.TaskLoadedCallback;
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationListener;
+import android.location.LocationListener;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class MapFragment extends Fragment implements OnMapReadyCallback, TaskLoadedCallback, LocationListener {
-    private static final String TAG = "MapActivity";
-    private GoogleMap mMap;
-    private MarkerOptions place1, place2;
-    Button getDirection;
-    private Polyline currentPolyline;
-    //    private Boolean mLocationPermissionGranted = false;
+public class MapFragment extends Fragment implements OnMapReadyCallback, LocationListener {
+    GoogleMap mGoogleMap;
+    MapView mMapView;
+    View mView;
+    Polyline currentPolyline;
     private LocationManager locationManager;
-    private Marker destination, current_location;
-
-    private Location onlyOneLocation;
     private final int REQUEST_FINE_LOCATION = 1234;
 
-    private FusedLocationProviderClient client;
+    private Location onlyOneLocation;
+    private MarkerOptions place1, place2;
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//////        View v = inflater.inflate(R.layout.activity_map_, container, false);
-////        super.onCreate(savedInstanceState);
-//////        setContentView(R.layout.map_activity);
-////        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-////            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_FINE_LOCATION);
-////        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-////        locationManager.requestLocationUpdates("gps", 0, 0, (android.location.LocationListener) this);
-////
-////
-////        getDirection = v.findViewById(R.id.btnGetDirection);
-////        getDirection.setOnClickListener(new View.OnClickListener() {
-////            @Override
-////            public void onClick(View view) {
-////                Log.d("place 1", place1.toString());
-////                Log.d("place 2", place2.toString());
-////
-////                new FetchURL(getActivity()).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
-////            }
-////        });
-////        if (ActivityCompat.checkSelfPermission(getActivity(), ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-////            return v;
-////        }
-////
-////        // square one: 43.5913458, -79.6461564
-////        // south common: 43.5446645, -79.6826318
-////        place1 = new MarkerOptions().position(new LatLng(43.547868, -79.660944)).title("Location 1");
-////        place2 = new MarkerOptions().position(new LatLng(43.5915729, -79.6456884)).title("Location 2");
-//////        com.google.android.gms.maps.MapFragment mapFragment = (SupportMapFragment) getFragmentManager().findFragmentById()
-//////                .findFragmentById(R.id.mapNearBy);
-//////        mapFragment.getMapAsync(this);
-////        SupportMapFragment mMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapNearBy);
-////        mMapFragment.getMapAsync(this);
-////        return v;
-//    }
-
-
-
-    public  MapFragment() {}
-
-    @Override
-    public void onTaskDone(Object... values) {
-        if (currentPolyline != null)
-            currentPolyline.remove();
-        currentPolyline = mMap.addPolyline((PolylineOptions) values[0]);
+    public MapFragment() {
+        // Required empty public constructor
     }
 
     @Override
-    public void onLocationChanged(Location location) {
-        onlyOneLocation = location;
-        current_location.remove();
-//        if (currentPolyline!=null && (location.getLatitude() != current_location.getPosition().latitude) && (location.getLongitude() != current_location.getPosition().longitude)) {
-//            currentPolyline.remove();
-//        }
-        MarkerOptions newLoc = new MarkerOptions().position(new LatLng(location.getLatitude(), location.getLongitude())).title("Destination");
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
-        current_location = mMap.addMarker(newLoc);
-        place2 = newLoc;
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_FINE_LOCATION);
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+
+        mMapView = (MapView) mView.findViewById(R.id.map);
+        if (mMapView != null) {
+            mMapView.onCreate(null);
+            mMapView.onResume();
+            mMapView.getMapAsync(this);
+        }
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mView = inflater.inflate(R.layout.fragment_map, container, false);
+        return mView;
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        Log.d("mylog", "Added Markers");
+        MapsInitializer.initialize(getContext());
+        mGoogleMap = googleMap;
+
+        Criteria criteria = new Criteria();
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        String provider = locationManager.getBestProvider(criteria, true);
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        mMap.setMyLocationEnabled(true);
-        destination = mMap.addMarker(place1);
-        current_location = mMap.addMarker(place2);
+        Location location = locationManager.getLastKnownLocation(provider);
+        double latitude = location.getLatitude();
+        double longitude = location.getLongitude();
+
+//        new LatLng(43.5913458, -79.6461550)
+
+        place1 = new MarkerOptions().position(new LatLng(latitude, longitude)).title("You");
+        place2 = new MarkerOptions().position(new LatLng(43.591092,-79.6468034)).title("Patient");
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        mGoogleMap.setMyLocationEnabled(true);
+
+        new FetchURL(this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+
+
+        googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        googleMap.addMarker(place1);
+        googleMap.addMarker(place2);
+        CameraPosition Liberty = CameraPosition.builder().target(new LatLng(latitude, longitude)).zoom(18).bearing(0).tilt(45).build();
+
+        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Liberty));
     }
 
     private String getUrl(LatLng origin, LatLng dest, String directionMode) {
@@ -137,6 +130,13 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, TaskLoa
         return url;
     }
 
+
+    public void onTaskDone(Object... values) {
+        if (currentPolyline != null)
+            currentPolyline.remove();
+        currentPolyline = mGoogleMap.addPolyline((PolylineOptions) values[0]);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -145,12 +145,32 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, TaskLoa
                     Log.d("gps", "Location permission granted");
                     try {
                         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-                        locationManager.requestLocationUpdates("gps", 0, 0, (android.location.LocationListener) this);
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
                     } catch (SecurityException ex) {
                         Log.d("gps", "Location permission did not work!");
                     }
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
     }
 }

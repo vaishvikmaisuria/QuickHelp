@@ -42,6 +42,14 @@
         <activity android:name=".Notification" />
         <activity android:name=".additional_Details" />
         <activity android:name=".help_severity"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="API_KEY"
+            />
+
     </application>
+
+
 
 </manifest>
