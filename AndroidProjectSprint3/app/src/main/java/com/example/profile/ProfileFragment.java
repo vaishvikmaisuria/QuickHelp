@@ -37,9 +37,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
         Button button = (Button) v.findViewById(R.id.button8);
         Button personalInfo = (Button) v.findViewById(R.id.button6);
+        Button updateMember = (Button) v.findViewById(R.id.button9);
 
         button.setOnClickListener(this);
         personalInfo.setOnClickListener(this);
+        updateMember.setOnClickListener(this);
 
         return v;
 
@@ -56,10 +58,21 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.button8: {
                 Intent intent = new Intent(getActivity(), Medical_History2.class);
                 startActivity(intent);
+                break;
             }
             case R.id.button6: {
                 Intent intent = new Intent(getActivity(), PersonalInfo.class);
                 startActivity(intent);
+                break;
+            }
+            case R.id.button9: {
+                // is app compact
+                Intent intent = new Intent(getActivity(), ValidateDoctor.class);
+                startActivity(intent);
+
+
+
+                break;
             }
         }
     }
