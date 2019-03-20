@@ -30,7 +30,7 @@ public class PersonalInfo extends AppCompatActivity{
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.user_info);
+        setContentView(R.layout.personal_info);
         fName = (EditText) findViewById(R.id.fName);
         lName = (EditText) findViewById(R.id.lName);
         bloodType = (EditText) findViewById(R.id.bloodType);
