@@ -21,7 +21,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private TextView name;
     private TextView username;
-    public static final int PICK_IMAGE = 1;
 
     @Nullable
     @Override
@@ -59,18 +58,21 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             case R.id.button8: {
                 Intent intent = new Intent(getActivity(), Medical_History2.class);
                 startActivity(intent);
+                break;
             }
             case R.id.button6: {
                 Intent intent = new Intent(getActivity(), PersonalInfo.class);
                 startActivity(intent);
+                break;
             }
             case R.id.button9: {
                 // is app compact
-                Intent intent = new Intent(getActivity(), SendEmail.class);
+                Intent intent = new Intent(getActivity(), ValidateDoctor.class);
                 startActivity(intent);
-                //ValidateProfessional val = new ValidateProfessional();
 
-                //break;
+
+
+                break;
             }
         }
     }
@@ -84,17 +86,4 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
 
     }
-    private void uploadCredentials() {
-        Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        getIntent.setType("image/*");
-
-        Intent pickIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        pickIntent.setType("image/*");
-
-        Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Intent[] {pickIntent});
-
-        startActivityForResult(chooserIntent, PICK_IMAGE);
-    }
-
 }
