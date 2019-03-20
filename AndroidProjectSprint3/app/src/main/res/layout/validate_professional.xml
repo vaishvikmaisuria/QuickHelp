@@ -8,16 +8,18 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="237dp"
+        android:layout_width="320dp"
         android:layout_height="36dp"
         android:layout_marginStart="96dp"
         android:layout_marginLeft="96dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginTop="36dp"
         android:text="Enter Certification Key:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textcolour"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/certificationKey"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/certificationKey"
+        app:layout_constraintTop_toBottomOf="@+id/send_email" />
 
     <TextView
         android:id="@+id/VerificationProcessExplaination"
@@ -27,11 +29,11 @@
         android:layout_marginBottom="144dp"
         android:text="      To be able to access this application as a medical professional, it is required that some valid credentials are submitted to ensure all doctors operating this app are certified."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.158" />
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/VerificationProcessExplaination2"
@@ -41,11 +43,11 @@
         android:layout_marginBottom="144dp"
         android:text="      If you wish to become certified on this app, please use the upload button below to upload pictures of your certifications."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/VerificationProcessExplaination"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintStart_toStartOf="@+id/VerificationProcessExplaination"
+        app:layout_constraintTop_toBottomOf="@+id/VerificationProcessExplaination"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/VerificationProcessExplaination3"
@@ -55,27 +57,27 @@
         android:layout_marginBottom="144dp"
         android:text="      If you mee the requirements, you will receive an email containing the certification key."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/VerificationProcessExplaination2"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.411" />
+        app:layout_constraintStart_toStartOf="@+id/VerificationProcessExplaination2"
+        app:layout_constraintTop_toBottomOf="@+id/VerificationProcessExplaination2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="189dp"
-        android:layout_height="42dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Upload Credentials"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textcolour"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/VerificationProcessExplaination3"
+        app:layout_constraintStart_toStartOf="@+id/VerificationProcessExplaination3"
+        app:layout_constraintTop_toBottomOf="@+id/VerificationProcessExplaination3" />
 
     <TextView
         android:id="@+id/textView"
@@ -98,15 +100,15 @@
     <TextView
         android:id="@+id/uploadExplaination"
         android:layout_width="309dp"
-        android:layout_height="54dp"
+        android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="144dp"
         android:text="Upload images of your medical credentials using the upload button below."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.632" />
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <Button
@@ -115,6 +117,7 @@
         android:layout_height="54dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
         android:background="@drawable/filled_button_round"
         android:gravity="center"
         android:padding="15dp"
@@ -125,22 +128,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadExplaination"
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/uploadCount"
         android:layout_width="93dp"
         android:layout_height="38dp"
-        android:layout_marginTop="280dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="144dp"
         android:text="Documents 0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintTop_toBottomOf="@+id/uploadExplaination"
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/send_email"
@@ -148,6 +151,7 @@
         android:layout_height="54dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:layout_marginTop="8dp"
         android:background="@drawable/filled_button_round"
         android:gravity="center"
         android:padding="15dp"
@@ -158,21 +162,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintTop_toBottomOf="@+id/upload"
+        app:layout_constraintVertical_bias="0.004" />
 
     <EditText
         android:id="@+id/certificationKey"
         android:layout_width="324dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.889" />
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.349" />
 
 
 </android.support.constraint.ConstraintLayout>
