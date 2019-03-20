@@ -14,6 +14,7 @@ import android.text.Selection;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 import android.widget.EditText;
@@ -24,13 +25,15 @@ import com.example.profile.httpRequestHelpers.httpPostRequest;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.support.constraint.Constraints.TAG;
-import static com.example.profile.Professional.setProfessional;
+import static com.example.profile.User.User1;
+import static com.example.profile.User.getUser;
 
 
 public class ValidateDoctor extends Activity implements OnClickListener {
@@ -40,10 +43,10 @@ public class ValidateDoctor extends Activity implements OnClickListener {
     String email, subject, message, fromemail;
     private static final int PICK_FROM_GALLERY = 101;
     String realPath;
-
-    private JSONObject change;
+    String key;
 
     ArrayList<String> image_paths = new ArrayList<String>();
+    private Button verify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +54,26 @@ public class ValidateDoctor extends Activity implements OnClickListener {
         setContentView(R.layout.validate_professional);
 
         btnSend = (Button) findViewById(R.id.send_email);
+        verify = (Button) findViewById(R.id.verify);
         btnAttachment = (Button) findViewById(R.id.upload);
         uploads = (TextView) findViewById(R.id.uploadCount);
         certifications = (EditText) findViewById(R.id.certificationKey);
 
-        btnSend.setOnClickListener(this);
-        btnAttachment.setOnClickListener(this);
-        certifications.setOnClickListener(this);
+        try {
+            key = User.User1.get("key").toString();
+
+            if ((boolean)User.getUser().get("professional")) {
+                certifications.setText(User.User1.get("key").toString());
+                certifications.setEnabled(false);
+            } else {
+                btnSend.setOnClickListener(this);
+                btnAttachment.setOnClickListener(this);
+                verify.setOnClickListener(this);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         // makes sure Permissions are granted as of latest Android versions
         TedPermission.with(this)
@@ -76,7 +92,7 @@ public class ValidateDoctor extends Activity implements OnClickListener {
             Uri uri = data.getData();
 
             // stores paths of image that was selected
-                // ImageFilePah is a class that is used to get the path of the selected file
+            // ImageFilePah is a class that is used to get the path of the selected file
             realPath = ImageFilePath.getPath(ValidateDoctor.this, uri);
             image_paths.add(realPath);
             String upload_str = Integer.toString(image_paths.size());
@@ -93,17 +109,23 @@ public class ValidateDoctor extends Activity implements OnClickListener {
 
         if (v == btnAttachment) {
             openGallery();
-
         }
         if (v == btnSend) {
+            if(image_paths.size() > 0){
+                sendEmail();
+            }else{
+                Toast.makeText(ValidateDoctor.this, "Please upload your medical certifications.", Toast.LENGTH_LONG).show();
 
-            sendEmail();
+            }
+
         }
-        if (v == certifications) {
-
-            validateProfessional();
+        if (v == verify) {
+            try {
+                validateProfessional();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         }
-
     }
     /*
         function that allows user to open the phone gallery and select an image
@@ -116,8 +138,6 @@ public class ValidateDoctor extends Activity implements OnClickListener {
         startActivityForResult(
                 Intent.createChooser(intent, "Complete action using"),
                 PICK_FROM_GALLERY);
-
-
     }
     /*
         Creates an asyncronous task that invokes the mail server to send the email
@@ -130,7 +150,6 @@ public class ValidateDoctor extends Activity implements OnClickListener {
 
         try {
 
-
             class SendMailTask extends AsyncTask {
 
                 private ProgressDialog statusDialog;
@@ -140,7 +159,6 @@ public class ValidateDoctor extends Activity implements OnClickListener {
                 public SendMailTask(Activity activity) {
                     sendMailActivity = activity;
                     success = 0;
-
                 }
 
                 @Override
@@ -152,7 +170,8 @@ public class ValidateDoctor extends Activity implements OnClickListener {
                         email = "ainy.afzal@mail.utoronto.ca";
                         fromemail = "quickhealthgroup@gmail.com";
                         subject = "QuickHealth Verify Doctor";
-                        message = "Verify uploaded documents and click link to verify the doctor: <link>";
+                        String user_email = User1.get("email").toString();
+                        message = "Verify uploaded documents. If the user is a valid medical professional, send an email to " + user_email + " with this key: " + key;
                         String[] toArr = {email}; // This is an array, you can add more emails, just separate them with a coma
                         m.setTo(toArr); // load array to setTo function
                         m.setFrom(fromemail); // who is sending the email
@@ -179,9 +198,7 @@ public class ValidateDoctor extends Activity implements OnClickListener {
 
                     //emptying array of images
                     image_paths = new ArrayList<String>();
-
                 }
-
             }
             SendMailTask sent = new SendMailTask(ValidateDoctor.this);
 
@@ -190,16 +207,11 @@ public class ValidateDoctor extends Activity implements OnClickListener {
             // informing user of success
             Toast.makeText(ValidateDoctor.this, "The request has been sent.", Toast.LENGTH_LONG).show();
 
-
-
-
         } catch(Exception e) {
             // some other problem
             System.out.println(e);
             Toast.makeText(ValidateDoctor.this, "There was an error sending your request. Please try again or contact an admin.", Toast.LENGTH_LONG).show();
         }
-
-
 
     }
 
@@ -213,31 +225,44 @@ public class ValidateDoctor extends Activity implements OnClickListener {
         public void onPermissionDenied(List<String> deniedPermissions) {
             //Toast.makeText(ValidateDoctor.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
         }
-
     };
 
-    public void validateProfessional() {
+    public void validateProfessional() throws JSONException {
         String entered = certifications.getText().toString();
-        // hardcoded key
-        if(entered.equals("QAZWSXEDC")){
+        if(entered.equals(key)){
             // the correct key
-            setProfessional(User.User1);
             // unable to edit it anymore
             certifications.setEnabled(false);
 
             try {
-                // need to update teh db so that the key is permanent
 
-
+                JSONObject send = new JSONObject();
+                send.put("username",User.User1.get("username"));
+                send.put("key",entered);
+                httpPostRequest task = new httpPostRequest(null);
+                task.setJSON(send);
+                task.execute("https://quick-health.herokuapp.com/user/addDoctor/");
+                Snackbar.make(getRootView(), "Updated", Snackbar.LENGTH_LONG).show();
             }catch (Exception e) {
+                Log.d(TAG, e.getLocalizedMessage());
             }
+        }else{
+            Toast.makeText(ValidateDoctor.this, "This key is not valid.", Toast.LENGTH_LONG).show();
         }
-
-
-
     }
 
+    private View getRootView() {
+        final ViewGroup contentViewGroup = (ViewGroup) findViewById(android.R.id.content);
+        View rootView = null;
 
+        if(contentViewGroup != null)
+            rootView = contentViewGroup.getChildAt(0);
+
+        if(rootView == null)
+            rootView = getWindow().getDecorView().getRootView();
+
+        return rootView;
+    }
 }
 
 

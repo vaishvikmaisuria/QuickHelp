@@ -12,7 +12,7 @@
         android:layout_height="36dp"
         android:layout_marginStart="96dp"
         android:layout_marginLeft="96dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="12dp"
         android:text="Enter Certification Key:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textcolour"
@@ -133,14 +133,14 @@
 
     <TextView
         android:id="@+id/uploadCount"
-        android:layout_width="93dp"
+        android:layout_width="104dp"
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="144dp"
         android:text="Documents 0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uploadExplaination"
         app:layout_constraintVertical_bias="0.04" />
@@ -165,6 +165,25 @@
         app:layout_constraintTop_toBottomOf="@+id/upload"
         app:layout_constraintVertical_bias="0.004" />
 
+    <Button
+        android:id="@+id/verify"
+        android:layout_width="134dp"
+        android:layout_height="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/filled_button_round"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="Verify"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/certificationKey"
+        app:layout_constraintVertical_bias="0.207" />
+
     <EditText
         android:id="@+id/certificationKey"
         android:layout_width="324dp"
@@ -177,7 +196,6 @@
         app:layout_constraintHorizontal_bias="0.586"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
-        app:layout_constraintVertical_bias="0.349" />
-
+        app:layout_constraintVertical_bias="0.158" />
 
 </android.support.constraint.ConstraintLayout>

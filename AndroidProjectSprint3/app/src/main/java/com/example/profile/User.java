@@ -7,7 +7,6 @@ public class User {
 
     public User(){
         // all users have potential to become a professional
-        Professional Doctor1 = new Professional(User1);
     }
 
     public static JSONObject getUser(){
