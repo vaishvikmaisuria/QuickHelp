@@ -7,35 +7,80 @@
     tools:context=".ValidateDoctor">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView11"
+        android:layout_width="237dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginTop="548dp"
+        android:text="Enter Certification Key:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcolour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/VerificationProcessExplaination"
+        android:layout_width="342dp"
+        android:layout_height="162dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="144dp"
+        android:text="      To be able to access this application as a medical professional, it is required that some valid credentials are submitted to ensure all doctors operating this app are certified.
+        If you wish to become certified on this app, please use the upload button below to upload pictures of your certifications.
+        If you mee the requirements, you will receive an email containing the certification key."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <TextView
+        android:id="@+id/textView10"
         android:layout_width="189dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="280dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="Upload Credentials"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/textcolour"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="142dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Update Status"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/textcolour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:id="@+id/fName"
+        android:id="@+id/uploadExplaination"
         android:layout_width="309dp"
         android:layout_height="54dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="144dp"
-        android:text="Upload your credentials, and an admin will verify so that you are able to operate this app as a Profrssional."
+        android:text="Upload images of your medical credentials using the upload button below."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.632" />
 
 
     <Button
@@ -52,22 +97,24 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintVertical_bias="0.599" />
 
     <TextView
         android:id="@+id/uploadCount"
-        android:layout_width="309dp"
+        android:layout_width="93dp"
         android:layout_height="38dp"
         android:layout_marginTop="280dp"
         android:layout_marginBottom="144dp"
-        android:text="Documents Uploaded 0"
+        android:text="Documents 0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <Button
         android:id="@+id/send_email"
@@ -83,9 +130,23 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="0.7" />
+
+    <EditText
+        android:id="@+id/certificationKey"
+        android:layout_width="324dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.889" />
 
 
 </android.support.constraint.ConstraintLayout>

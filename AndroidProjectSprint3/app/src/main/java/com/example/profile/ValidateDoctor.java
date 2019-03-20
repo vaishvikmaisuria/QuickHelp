@@ -9,27 +9,39 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.support.design.widget.Snackbar;
+import android.text.Selection;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.profile.httpRequestHelpers.httpPostRequest;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.support.constraint.Constraints.TAG;
+import static com.example.profile.Professional.setProfessional;
+
 
 public class ValidateDoctor extends Activity implements OnClickListener {
     TextView uploads;
+    EditText certifications;
     Button btnSend, btnAttachment;
     String email, subject, message, fromemail;
     private static final int PICK_FROM_GALLERY = 101;
     String realPath;
+
+    private JSONObject change;
 
     ArrayList<String> image_paths = new ArrayList<String>();
 
@@ -40,10 +52,12 @@ public class ValidateDoctor extends Activity implements OnClickListener {
 
         btnSend = (Button) findViewById(R.id.send_email);
         btnAttachment = (Button) findViewById(R.id.upload);
-
         uploads = (TextView) findViewById(R.id.uploadCount);
+        certifications = (EditText) findViewById(R.id.certificationKey);
+
         btnSend.setOnClickListener(this);
         btnAttachment.setOnClickListener(this);
+        certifications.setOnClickListener(this);
 
         // makes sure Permissions are granted as of latest Android versions
         TedPermission.with(this)
@@ -66,7 +80,7 @@ public class ValidateDoctor extends Activity implements OnClickListener {
             realPath = ImageFilePath.getPath(ValidateDoctor.this, uri);
             image_paths.add(realPath);
             String upload_str = Integer.toString(image_paths.size());
-            uploads.setText("Documents Uploaded " + upload_str);
+            uploads.setText("Documents " + upload_str);
 
         } else {
             Toast.makeText(this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
@@ -84,6 +98,10 @@ public class ValidateDoctor extends Activity implements OnClickListener {
         if (v == btnSend) {
 
             sendEmail();
+        }
+        if (v == certifications) {
+
+            validateProfessional();
         }
 
     }
@@ -168,7 +186,7 @@ public class ValidateDoctor extends Activity implements OnClickListener {
             SendMailTask sent = new SendMailTask(ValidateDoctor.this);
 
             sent.execute();
-            uploads.setText("Documents Uploaded 0");
+            uploads.setText("Documents 0");
             // informing user of success
             Toast.makeText(ValidateDoctor.this, "The request has been sent.", Toast.LENGTH_LONG).show();
 
@@ -197,6 +215,27 @@ public class ValidateDoctor extends Activity implements OnClickListener {
         }
 
     };
+
+    public void validateProfessional() {
+        String entered = certifications.getText().toString();
+        // hardcoded key
+        if(entered.equals("QAZWSXEDC")){
+            // the correct key
+            setProfessional(User.User1);
+            // unable to edit it anymore
+            certifications.setEnabled(false);
+
+            try {
+                // need to update teh db so that the key is permanent
+
+
+            }catch (Exception e) {
+            }
+        }
+
+
+
+    }
 
 
 }
