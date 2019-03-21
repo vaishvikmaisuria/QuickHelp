@@ -1,8 +1,8 @@
 *NOTE: System design document underwent no changes this phase. A single paragraph explanation- as the professor required- has been attached to the bottom of the document.*
 
-# Release 2 Planning Meeting - QuickHealth
+# Sprit Release Meeting 4 - QuickHealth
 ---
-##### Mar 11th 2019 | 4:00PM - 6:00PM
+##### Mar 18th 2019 | 4:00PM - 6:00PM
 ***
 ### Participants:
 ***
@@ -22,7 +22,7 @@ As before, these tasks are accordingly represented in PivotalTracker.
 
 ### Meeting Overview:
 
-In this meeting, the QuickHealth team reflected on Sprint 1, and what went well and what didn't. The entire team was present for the meeting (from March 11, 2019, 4:00PM - 6:00 PM).
+In this meeting, the QuickHealth team reflected on Sprint 3, and what went well and what didn't. The entire team was present for the meeting (from March 18, 2019, 4:00PM - 6:00 PM).
 
 After successfully meeting our goals in the previoius sprint, our team is motivated to continue developing the app at a rapid pace. For this particular sprint, all of our members had obligations for other courses, so our workloads were heavier than usual. Therefore, each of our members assigned just enough user stories that we could handle to ensure that our work is completed by the end of the sprint. Leveraging what we've learned from completing previous user stories, our team continued to build more features.
 
@@ -30,11 +30,11 @@ Although sprint 2 was particularly rough due to tight schedules we have for our 
 
 ### Release Goals and Plans 
 1. For this release, we have selected to focus on the following user stories: 
-	- navigation bar
-	- medical form
-	- personal information page
-	- emergency contact page
-	- sign out
+	- 911 emergency call button
+	- Forgot password
+	- Doctor verification
+	- SOS cancel
+	- Accept/dismis option
 
 2. The main focus will be to finish all user stories assigned in each subteam's individual branches, and combine them into one executable application on the main branch. This ensures that all members are fully aware of how their feature interacts with the main application and solidifies their understanding of all user stories. Merging completed user stories as soon as possible will allow us to resolve any merge conflicts early on in the development process instead of pushing it into later sprints.
 
@@ -42,7 +42,7 @@ Although sprint 2 was particularly rough due to tight schedules we have for our 
 
 
 ### Meeting Conclusion:
-Quick Health's third SCRUM meeting was a successful gathering where our team members continued to work together successfully to ensure improvements are being made to the product.
+Quick Health's fourth SCRUM meeting was a successful gathering where our team members continued to work together successfully to ensure improvements are being made to the product.
 
 ### SYSTEM DESIGN EXPLANATION:
 
