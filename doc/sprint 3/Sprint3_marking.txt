@@ -141,10 +141,10 @@ System Design - (PDF or MD file or other suitable format) (Max 5 marks)
   
 -Class Demo: [10 marks, see other rubric]
  =======
- Your mark: 0
+ Your mark: 10
  ======= 
  
  
--Total mark: 30/40
+-Total mark: 40/40
 
   
