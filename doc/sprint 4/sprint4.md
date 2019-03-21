@@ -70,5 +70,7 @@
 | Sign Out | As a regular user, I want to be able to Sign out so that my account is secure and my personal information is not stolen |P | 12 | 12 |
 | | Implement logout backend | P   | 2 | 2 |
 | | Implement logout frontend view | P  | 6 | 6 |
+| | Doctor Verification | A  | 6 | 6 |
+
 
 
