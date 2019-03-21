@@ -31,7 +31,7 @@ Although sprint 2 was particularly rough due to tight schedules we have for our 
 ### Release Goals and Plans 
 1. For this release, we have selected to focus on the following user stories: 
 	- 911 emergency call button
-	- Reset password
+	- Forgot password
 	- Doctor verification
 	- SOS cancel
 	- Accept/dismis option
