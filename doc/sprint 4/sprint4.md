@@ -68,9 +68,9 @@
 | | able to make post request and update data on the db | R A | 8 | 5 |
 | |  Modified the server side code including, routes and schema modifications  | R A | 5 | 4 |
 | Sign Out | As a regular user, I want to be able to Sign out so that my account is secure and my personal information is not stolen |P | 12 | 12 |
-| | Implement logout backend | P   | 2 | 2 |
+| | Implement logout backend | P  | 2 | 2 |
 | | Implement logout frontend view | P  | 6 | 6 |
-| | Doctor Verification | A  | 6 | 6 |
+| | Doctor Verification | R A | 6 | 6 |
 
 
 
