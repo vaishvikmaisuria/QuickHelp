@@ -1,6 +1,6 @@
 PRODUCT BACKLOG- **QUICK HELP**
 
-| User Story | Points | Importance Ranking |
+| User Story | Points | Priority |
 | --- | --- | --- |
 |As a regular user, I want the skilled individuals to be registered so that i can be assured that I'm communicating with qualified individuals. | 3 | 21|
 | As a regular user needing medical assistance, I want to be able to send a SOS signal to immediately send my location and request for help. | 3 | 13 |
