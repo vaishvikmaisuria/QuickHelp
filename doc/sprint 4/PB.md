@@ -18,6 +18,7 @@ PRODUCT BACKLOG- **QUICK HELP**
 | As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 13 |
 | As a user in need of medical assistance, I want to be able to receive help when no doctors are available  by being guided them through simple medical procedures | 1 | 2 |
 | As a user of the app, I want to be able to be verified as a medical professional to be able to use this app to assist others | 3 | 13|
+| As a user using the app, I want to be able to reset my password if I forgot it | 1 | 3|
 
 PIVOTALTRACKER POINTS: 
   PivotalTracker does not support the quasi-fibonnaci system we used for scaling.
