@@ -15,10 +15,12 @@ import java.util.Map;
 import static android.support.constraint.Constraints.TAG;
 
 
-public class httpPostRequest extends AsyncTask<String, Void, Void> {
+public class httpPostRequest extends AsyncTask<String, Void, String> {
 
     // This is the JSON body of the post
     JSONObject postData;
+    String response;
+
 
     // This is a constructor that allows you to pass in the JSON body
     public httpPostRequest(Map<String, String> postData) {
@@ -39,7 +41,7 @@ public class httpPostRequest extends AsyncTask<String, Void, Void> {
 
     // This is a function that we are overriding from AsyncTask. It takes Strings as parameters because that is what we defined for the parameters of our async task
     @Override
-    protected Void doInBackground(String... params) {
+    protected String doInBackground(String... params) {
 
         try {
             // This is getting the url from the string we passed in
@@ -73,7 +75,7 @@ public class httpPostRequest extends AsyncTask<String, Void, Void> {
 
                 InputStream inputStream = new BufferedInputStream(urlConnection.getInputStream());
 
-                String response = convertInputStreamToString(inputStream);
+                response = convertInputStreamToString(inputStream);
 
                 // From here you can convert the string to JSON with whatever JSON parser you like to use
                 // After converting the string to JSON, I call my custom callback. You can follow this process too, or you can implement the onPostExecute(Result) method
@@ -85,7 +87,7 @@ public class httpPostRequest extends AsyncTask<String, Void, Void> {
         } catch (Exception e) {
             Log.d(TAG, e.getLocalizedMessage());
         }
-        return null;
+        return response;
     }
 
 

@@ -11,26 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-
-import com.example.profile.Classes.MedicalForm;
 import com.example.profile.Retrofit.INodeJs;
-import com.example.profile.Retrofit.RetrofitClient;
 import com.example.profile.httpRequestHelpers.httpPostRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.jar.JarException;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
+
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -77,6 +63,7 @@ public class Medical_History2 extends AppCompatActivity {
                 try {
                     change.put("other", otherText.getEditText().getText().toString());
                     send = new JSONObject();
+
                     send.put("username",User.User1.get("username").toString());
                     send.put("medicalInfo",change);
                     httpPostRequest task = new httpPostRequest(null);
@@ -91,11 +78,6 @@ public class Medical_History2 extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
 
     }
 
@@ -180,10 +162,5 @@ public class Medical_History2 extends AppCompatActivity {
 
         return rootView;
     }
-
-
-
-
-
 
 }

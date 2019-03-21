@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,18 +47,18 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         listItems = new ArrayList<>();
+//
+//        listItems.add(
+//                new sosRequest(0, "First Dummy Request",
+//                        "Dont Do anything")
+//        );
 
-        listItems.add(
-                new sosRequest(0, "First Dummy Request",
-                        "Dont Do anything")
-        );
-
-//        for(int i =0; i<=10; i++){
-//            sosRequest listitem =  new sosRequest(i, "heading" + (i+1),
-//                        "Dummy text That states the type of injury"
-//            );
-//            listItems.add(listitem);
-//        }
+        for(int i =0; i<=10; i++){
+            sosRequest listitem =  new sosRequest(i, "heading" + (i+1),
+                        "Dummy text That states the type of injury"
+            );
+            listItems.add(listitem);
+        }
 
         adapter = new MyAdapter(listItems, getActivity() );
 
@@ -78,7 +79,7 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
     public void onClick(View view) {
 
         // Some url endpoint that you may have
-        String myUrl = "http://localhost:3000/sos/allSOS";
+        String myUrl = "https://quick-health.herokuapp.com/sos/allSOS";
         //String to place our result in
         String result = "none";
         //Instantiate new instance of our class
@@ -96,4 +97,5 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
 //        textView.setText("NONN");
 
     }
+
 }

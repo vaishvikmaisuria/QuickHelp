@@ -28,6 +28,7 @@ import org.json.JSONException;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 
 public class SOSFragment extends Fragment implements View.OnClickListener {
@@ -136,7 +137,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
             //String myUrl = "http://localhost:3000";
 
             //String to place our result in
-            String result;
+            String result = null;
 
             //Create the Json Object
             //JSONObject sosLocation = new JSONObject();
@@ -151,7 +152,15 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
             //Perform the doInBackground method, passing in our url
 
-            task.execute(myUrl + "/sos/newSOS");
+            try {
+                result = task.execute(myUrl + "/sos/newSOS").get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            sosData.setUser(result);
 
 
         }
