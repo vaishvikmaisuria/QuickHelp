@@ -19,7 +19,11 @@ const SosSchema = new mongoose.Schema({
     latitude: {
     	type: Number,
     	required: true
+    },
+    Active: {
+        type: Boolean,
     }
+    
 });
 
 
