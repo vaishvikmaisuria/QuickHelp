@@ -46,13 +46,14 @@
         app:layout_constraintVertical_bias="0.925" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxbrokenBones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:buttonTint="@color/textcolour"
         android:checked="false"
         android:text="Broken Bones"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +62,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxChoking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
+        android:onClick="onCheckboxClicked"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Choking"
@@ -76,13 +78,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox3"
+        android:id="@+id/checkBoxBleeding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Bleeding"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,13 +94,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox4"
+        android:id="@+id/checkBoxfire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
-        android:text="Skin Burn"
+        android:text="Fire Related Injury"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,13 +110,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox5"
+        android:id="@+id/checkBoxjointTwist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Joint Twist"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,13 +126,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox6"
+        android:id="@+id/checkBoxUnconciousness"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Unconciousness"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,13 +142,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox7"
+        android:id="@+id/checkBoxHeartStroke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Heart Stroke"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,13 +158,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox8"
+        android:id="@+id/checkBoxAsthma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="184dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Asthma"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -166,13 +174,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox9"
+        android:id="@+id/checkBoxPoisoning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="236dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Poisoning"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,13 +190,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/checkBox10"
+        android:id="@+id/checkBoxDrowning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="236dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
         android:text="Drowning"
+        android:onClick="onCheckboxClicked"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,13 +207,26 @@
 
 
     <android.support.design.widget.TextInputEditText
+        android:id="@+id/textbox22"
         android:layout_width="250dp"
         android:layout_height="54dp"
-        android:text="Other Medical Condition"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="153dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
 
 </android.support.constraint.ConstraintLayout>

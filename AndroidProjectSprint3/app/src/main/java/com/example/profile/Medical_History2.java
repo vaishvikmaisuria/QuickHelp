@@ -68,6 +68,7 @@ public class Medical_History2 extends AppCompatActivity {
                     send.put("medicalInfo",change);
                     httpPostRequest task = new httpPostRequest(null);
                     task.setJSON(send);
+
                     task.execute("https://quick-health.herokuapp.com/user/updateInfo");
                     Snackbar.make(getRootView(), "Updated", Snackbar.LENGTH_LONG).show();
 
