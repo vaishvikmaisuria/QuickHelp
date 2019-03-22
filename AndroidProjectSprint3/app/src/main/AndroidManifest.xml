@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -28,6 +30,9 @@
         <activity
             android:name=".PersonalInfo"
             android:label="@string/user_info" />
+        <activity
+            android:name=".EmergencyInfo"
+            android:label="Emergency Contact" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +47,7 @@
         <activity android:name=".Notification" />
         <activity android:name=".additional_Details" />
         <activity android:name=".help_severity"></activity>
-
+        <activity android:name=".ValidateDoctor" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="API_KEY"
