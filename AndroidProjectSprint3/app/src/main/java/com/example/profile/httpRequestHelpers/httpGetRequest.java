@@ -1,6 +1,9 @@
 package com.example.profile.httpRequestHelpers;
 
 import android.os.AsyncTask;
+import android.util.Log;
+
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,13 +43,16 @@ public class httpGetRequest extends AsyncTask<String, Void, String> {
             StringBuilder stringBuilder = new StringBuilder();
             //Check if the line we are reading is not null
             while((inputLine = reader.readLine()) != null){
+                Log.d("inputline", inputLine + "\n \n");
                 stringBuilder.append(inputLine);
             }
+
             //Close our InputStream and Buffered reader
             reader.close();
             streamReader.close();
             //Set our result equal to our stringBuilder
             result = stringBuilder.toString();
+
         }
         catch(IOException e){
             e.printStackTrace();
