@@ -95,7 +95,17 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
 //        new LatLng(43.5913458, -79.6461550)
 
+
+//        //long
+//        Double patientlong = sosData.getLocationlong();
+//        //lat
+//        Double patientlat = sosData.getLocationlat();
+
+//        Log.d("latitude", patientlat.toString());
+//        Log.d("longitude", patientlong.toString());
+
         place1 = new MarkerOptions().position(new LatLng(latitude, longitude)).title("You");
+
         place2 = new MarkerOptions().position(new LatLng(43.591092,-79.6468034)).title("Patient");
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;

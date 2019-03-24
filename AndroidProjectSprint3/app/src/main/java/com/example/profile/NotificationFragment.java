@@ -1,13 +1,12 @@
 package com.example.profile;
 
-import android.content.Context;
-import android.location.LocationManager;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -17,22 +16,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.profile.directionhelpers.FetchURL;
 import com.example.profile.httpRequestHelpers.fetchData;
-import com.example.profile.httpRequestHelpers.httpGetRequest;
+import com.example.profile.httpRequestHelpers.httpPostRequest;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class NotificationFragment extends Fragment implements View.OnClickListener {
 
@@ -40,7 +32,8 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
     Button button;
     public static TextView textView;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private MyAdapter adapter;
+    JSONObject sendSOS;
 
     private RequestQueue mQueue;
 
@@ -68,6 +61,49 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
 
         recyclerView.setAdapter(adapter);
 
+        adapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onAcceptClick(int position) {
+
+                Log.d("sos request id",String.valueOf(adapter.requestList.get(position).getSosID()));
+                Log.d("Location", String.valueOf(adapter.requestList.get(position).getHeader()));
+                try {
+                    Log.d("Doctor ID", User.getUser().get("_id").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                sendSOS = new JSONObject();
+
+                try {
+                    sendSOS.put("doctorID",User.getUser().get("_id").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    sendSOS.put("sosID",String.valueOf(adapter.requestList.get(position).getSosID()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //link to patch the sos collection
+                httpPostRequest task = new httpPostRequest(null);
+                task.setJSON(sendSOS);
+                task.execute("https://quick-health.herokuapp.com/sos/updateSOSDoctor");
+
+                //link to patch the user collection
+                httpPostRequest task2 = new httpPostRequest(null);
+                task2.setJSON(sendSOS);
+                task2.execute("https://quick-health.herokuapp.com/user/updateSOSDoctor");
+
+
+                sosData.setLocationlong(adapter.requestList.get(position).getLongitude());
+                sosData.setLocationlat(adapter.requestList.get(position).getLatitude());
+                ChangeView();
+
+            }
+        });
+
         textView = (TextView) v.findViewById(R.id.text_request);
         button = (Button) v.findViewById(R.id.button_notification);
 
@@ -78,7 +114,28 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
 
     }
 
+    public void ChangeView(){
+        // Create new fragment and transaction
+        Fragment newFragment = new MapFragment();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack if needed
+        transaction.replace(R.id.fragment_container, newFragment);
+        transaction.addToBackStack(null);
+
+// Commit the transaction
+        transaction.commit();
+    }
+
     public NotificationFragment() {
+    }
+
+    public JSONObject initJSON() throws  JSONException{
+        JSONObject x = new JSONObject();
+        x.put("doctorID","");
+        x.put("sosID","");
+        return x;
     }
 
     @Override
