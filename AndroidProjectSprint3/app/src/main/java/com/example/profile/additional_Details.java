@@ -29,7 +29,7 @@ public class additional_Details extends AppCompatActivity {
 
     private Button updatebtn;
     private Button callbtn;
-    private TextView textView10;
+
     JSONObject change;
     JSONObject send;
     Boolean flag = true;
@@ -65,7 +65,7 @@ public class additional_Details extends AppCompatActivity {
         }
 
         textbox = (TextInputEditText) findViewById(R.id.textbox22);
-        textView10 = (TextView) findViewById(R.id.textView10);
+
         updatebtn = (Button) findViewById(R.id.button_update);
 
         updatebtn.setOnClickListener(new View.OnClickListener() {
@@ -75,11 +75,7 @@ public class additional_Details extends AppCompatActivity {
                 try {
 
                     send = new JSONObject();
-                    if(map.get("Broken Bones")){
-                        textView10.setText("true");
-                    }else{
-                        textView10.setText("false");
-                    }
+
                     String Desc = "";
 
 
@@ -102,7 +98,6 @@ public class additional_Details extends AppCompatActivity {
 
 
 
-                    textView10.setText(Desc);
 
                     send.put("id",sosData.getSos1().substring(8,32));
                     send.put("injuryDetails",Desc);
@@ -115,7 +110,7 @@ public class additional_Details extends AppCompatActivity {
                     Log.d(TAG, e.getLocalizedMessage());
                 }
 
-                //go to the next page waiting for the doctor
+               // go to the next page waiting for the doctor
                 if(flag){
                     gohelpseverity(view);
                 }else{

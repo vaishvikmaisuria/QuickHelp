@@ -2,6 +2,7 @@ package com.example.profile;
 
 import android.content.Context;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,9 +17,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.example.profile.directionhelpers.FetchURL;
+import com.example.profile.httpRequestHelpers.fetchData;
 import com.example.profile.httpRequestHelpers.httpGetRequest;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +38,14 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
 
     private static final int REQUEST_LOCATION = 1;
     Button button;
-    TextView textView;
+    public static TextView textView;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
-    private List<sosRequest> listItems;
+    private RequestQueue mQueue;
+
+
+    public static List<sosRequest> listItems;
 
     @Nullable
     @Override
@@ -47,20 +60,11 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         listItems = new ArrayList<>();
-//
-//        listItems.add(
-//                new sosRequest(0, "First Dummy Request",
-//                        "Dont Do anything")
-//        );
+        adapter = new MyAdapter(listItems, getActivity());
 
-        for(int i =0; i<=10; i++){
-            sosRequest listitem =  new sosRequest(i, "heading" + (i+1),
-                        "Dummy text That states the type of injury"
-            );
-            listItems.add(listitem);
-        }
+        fetchData process = new fetchData();
+        process.execute();
 
-        adapter = new MyAdapter(listItems, getActivity() );
 
         recyclerView.setAdapter(adapter);
 
@@ -69,33 +73,21 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
 
         button.setOnClickListener(this);
 
+
         return v;
 
     }
 
-    public  NotificationFragment() {}
+    public NotificationFragment() {
+    }
 
     @Override
     public void onClick(View view) {
 
-        // Some url endpoint that you may have
-        String myUrl = "https://quick-health.herokuapp.com/sos/allSOS";
-        //String to place our result in
-        String result = "none";
-        //Instantiate new instance of our class
-        httpGetRequest getRequest = new httpGetRequest();
-        //Perform the doInBackground method, passing in our url
-        try {
-            result = getRequest.execute(myUrl).get();
-            textView.setText(result);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        fetchData process = new fetchData();
+        process.execute();
 
-//        textView.setText("NONN");
-
+        recyclerView.setAdapter(adapter);
     }
-
 }
+
