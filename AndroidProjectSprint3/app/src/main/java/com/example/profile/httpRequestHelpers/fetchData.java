@@ -49,15 +49,17 @@ public class fetchData extends AsyncTask<String, Void, String> {
                 JSONObject JO = (JSONObject) JA.get(i);
                 String Location = "Location: " + JO.get("longitude") + ", " + JO.get("latitude") + "\n";
                 String Type = "injuryDetails: " + JO.get("injuryDetails") + "\n";
+                String ID = (String) JO.get("_id");
+                Double longitude = (double) JO.get("longitude");
+                Double latitude = (double) JO.get("latitude");
 
-                sosRequest listitem =  new sosRequest(i, Location,Type);
+                sosRequest listitem =  new sosRequest(i, Location,Type, ID, longitude, latitude);
 
                 NotificationFragment.listItems.add(listitem);
 
 
                 dataParsed = dataParsed + singleParsed + "\n";
             }
-
 
         } catch (MalformedURLException e) {
             e.printStackTrace();
