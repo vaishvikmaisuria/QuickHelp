@@ -9,7 +9,7 @@
         android:layout_width="68dp"
         android:layout_height="68dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/rocket"
+        android:src="@drawable/ic_check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -2,7 +2,6 @@ package com.example.profile;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.TextView;
 
 import com.example.profile.Retrofit.INodeJs;
 import com.example.profile.httpRequestHelpers.httpPostRequest;
@@ -133,7 +131,7 @@ public class additional_Details extends AppCompatActivity {
     }
 
     public void gohelpseverity(View view) {
-        Intent intent = new Intent(this, help_severity.class);
+        Intent intent = new Intent(this, SearchingActivity.class);
         startActivity(intent);
     }
 

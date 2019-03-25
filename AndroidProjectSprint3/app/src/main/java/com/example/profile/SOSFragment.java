@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 //import android.view.View;
 import android.view.View;
@@ -25,6 +26,7 @@ import android.widget.Toast;
 import com.example.profile.httpRequestHelpers.httpPostRequest;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -160,6 +162,17 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
 
+            JSONObject JO = new JSONObject(result);
+
+
+            // Completed the Task JO is the json object with the id
+            Log.d("JSON", JO.get("_id").toString());
+
+            // this adds the json object to sosDAta
+            sosData.setUsersos(JO);
+
+
+            // this adds the string result
             sosData.setUser(result);
 
 

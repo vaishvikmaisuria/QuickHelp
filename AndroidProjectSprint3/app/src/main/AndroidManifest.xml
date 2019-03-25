@@ -46,7 +46,7 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Notification" />
         <activity android:name=".additional_Details" />
-        <activity android:name=".help_severity"></activity>
+        <activity android:name=".SearchingActivity"></activity>
         <activity android:name=".ValidateDoctor" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"

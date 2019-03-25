@@ -5,8 +5,17 @@ import org.json.JSONObject;
 public class sosData {
 
     static public String sos1;
+    static public JSONObject Usersos;
     static public Double locationlong;
     static public Double locationlat;
+
+    public static JSONObject getUsersos() {
+        return Usersos;
+    }
+
+    public static void setUsersos(JSONObject usersos) {
+        Usersos = usersos;
+    }
 
     public static Double getLocationlong() {
         return locationlong;
