@@ -21,14 +21,21 @@
     <ScrollView
         android:layout_width="364dp"
         android:layout_height="591dp"
+<<<<<<< HEAD
         android:layout_marginTop="8dp"
+=======
+>>>>>>> 8eccb96c79c8462cf067337e7df97d3da25230ee
         android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
+=======
+        app:layout_constraintStart_toStartOf="parent">
+>>>>>>> 8eccb96c79c8462cf067337e7df97d3da25230ee
 
         <LinearLayout
             android:layout_width="match_parent"
