@@ -97,14 +97,16 @@
         android:id="@+id/checkBoxfire"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="216dp"
+        android:layout_marginLeft="216dp"
         android:layout_marginTop="88dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
-        android:text="Fire Related Injury"
         android:onClick="onCheckboxClicked"
+        android:text="Fire Related Injury"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
-        app:layout_constraintStart_toStartOf="@+id/checkBox2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
@@ -127,12 +129,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
-        android:text="Unconciousness"
         android:onClick="onCheckboxClicked"
+        android:text="Unconsciousness"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/checkBox4"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -157,12 +162,15 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
-        android:text="Asthma"
         android:onClick="onCheckboxClicked"
+        android:text="Asthma"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/checkBox6"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -187,12 +195,15 @@
 
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:buttonTint="@color/textcolour"
         android:clickable="true"
-        android:text="Drowning"
         android:onClick="onCheckboxClicked"
+        android:text="Drowning"
         android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
         android:textColor="@color/maincolour"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/checkBox8"
         app:layout_constraintTop_toTopOf="parent" />
 

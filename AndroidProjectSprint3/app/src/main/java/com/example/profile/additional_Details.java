@@ -1,5 +1,6 @@
 package com.example.profile;
 
+
 import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.Snackbar;
@@ -23,7 +24,9 @@ import java.util.Map;
 
 import io.reactivex.disposables.CompositeDisposable;
 
+import static android.app.PendingIntent.getActivity;
 import static android.support.constraint.Constraints.TAG;
+
 
 public class additional_Details extends AppCompatActivity {
 
@@ -33,6 +36,7 @@ public class additional_Details extends AppCompatActivity {
     JSONObject change;
     JSONObject send;
     Boolean flag = true;
+    //String flag1;
     private TextInputEditText textbox;
     Map<String, Boolean> map = new HashMap<String, Boolean>();
     private INodeJs myApi;
@@ -72,14 +76,111 @@ public class additional_Details extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 try {
 
                     send = new JSONObject();
                     if(map.get("Broken Bones")){
                         textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
+                        //flag1 = "Broken Bones";
+                        //flag1 = "Broken Bones";
+                        //intent = new Intent(view.getContext(), self_help_brokenbone.class);
+                        startActivity(intent);
+
                     }else{
                         textView10.setText("false");
                     }
+                    if(map.get("Choking")){
+                        textView10.setText("true");
+
+                        Intent intent = new Intent(view.getContext(), self_help_blocked_airway.class);
+                        //flag1 = "Choking";
+                        //intent = new Intent(view.getContext(), self_help_blocked_airway.class);
+                        startActivity(intent);
+
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Bleeding")){
+                        textView10.setText("true");
+
+                        Intent intent = new Intent(view.getContext(), self_help_bleeding.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_bleeding.class);
+
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Fire Related Injury")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_burn.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_burn.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Joint Twist")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_brokenbone.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Unconsciousness")){
+                        textView10.setText("true");
+
+                        Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Heart Stroke")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_heart.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_heart.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Asthma")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Poisoning")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
+                        startActivity(intent);
+                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    if(map.get("Drowning")){
+                        textView10.setText("true");
+                        Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
+                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
+                        startActivity(intent);
+                    }else{
+                        textView10.setText("false");
+                    }
+
+                    //startActivity(intent);
+
+
                     String Desc = "";
 
 
@@ -115,12 +216,7 @@ public class additional_Details extends AppCompatActivity {
                     Log.d(TAG, e.getLocalizedMessage());
                 }
 
-                //go to the next page waiting for the doctor
-                if(flag){
-                    gohelpseverity(view);
-                }else{
 
-                }
             }
 
         });
@@ -136,15 +232,24 @@ public class additional_Details extends AppCompatActivity {
             }
         });
     }
-
-    public void gohelpseverity(View view) {
-        Intent intent = new Intent(this, help_severity.class);
-        startActivity(intent);
-    }
+//    public void goselfhelpbone(View view) {
+//        Intent intent = new Intent(this, self_help_brokenbone.class);
+//        startActivity(intent);
+//    }
+//    public void goselfhelpchoke(View view) {
+//        Intent intent = new Intent(this, self_help_blocked_airway.class);
+//        startActivity(intent);
+//    }
+//
+//    public void gohelpseverity(View view) {
+//        Intent intent = new Intent(this, help_severity.class);
+//        startActivity(intent);
+//    }
 
     public void onCheckboxClicked(View view) throws JSONException {
         boolean checked = ((CheckBox) view).isChecked();
 
+        //Intent intent = null;
         switch (view.getId()) {
             case R.id.checkBoxbrokenBones:
                 if (checked) {
@@ -157,6 +262,7 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxChoking:
                 if (checked) {
                     map.put("Choking",true);
+
                 }else{
                     map.put("Choking",false);
                 }
@@ -165,6 +271,8 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxBleeding:
                 if (checked) {
                     map.put("Bleeding",true);
+
+
                 }else{
                     map.put("Bleeding",false);
                 }
@@ -172,6 +280,7 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxfire:
                 if (checked) {
                     map.put("Fire Related Injury",true);
+
                 }else{
                     map.put("Fire Related Injury",false);
                 }
@@ -179,20 +288,22 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxjointTwist:
                 if (checked) {
                     map.put("Joint Twist",true);
+
                 }else{
                     map.put("Joint Twist",false);
                 }
                 break;
             case R.id.checkBoxUnconciousness:
                 if (checked) {
-                    map.put("Unconciousness",true);
+                    map.put("Unconsciousness",true);
                 }else{
-                    map.put("Unconciousness",false);
+                    map.put("Unconsciousness",false);
                 }
                 break;
             case R.id.checkBoxHeartStroke:
                 if (checked) {
                     map.put("Heart Stroke",true);
+
                 }else{
                     map.put("Heart Stroke",false);
                 }
@@ -200,6 +311,7 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxAsthma:
                 if (checked) {
                     map.put("Asthma",true);
+
                 }else{
                     map.put("Asthma",false);
                 }
@@ -207,6 +319,7 @@ public class additional_Details extends AppCompatActivity {
             case R.id.checkBoxPoisoning:
                 if (checked) {
                     map.put("Poisoning",true);
+
                 }else{
                     map.put("Poisoning",false);
                 }
@@ -219,7 +332,10 @@ public class additional_Details extends AppCompatActivity {
                     map.put("Drowning",false);
                 }
                 break;
+
+            
         }
+        //startActivity(intent);
     }
 
     public JSONObject initJSON() throws  JSONException{
@@ -228,6 +344,8 @@ public class additional_Details extends AppCompatActivity {
 
         return x;
     }
+
+
 
     private void emergency_call(final String phoneNumber) {
 
