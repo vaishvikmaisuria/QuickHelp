@@ -20,8 +20,8 @@
 
 
     <ScrollView
-        android:layout_width="395dp"
-        android:layout_height="633dp"
+        android:layout_width="370dp"
+        android:layout_height="478dp"
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,17 +90,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView16"
-                android:layout_width="385dp"
-                android:layout_height="178dp"
-                android:layout_marginTop="10dp"
-                android:text="With an adult or child, standing or sitting (and leaning forward), and using the heel of one hand, give the back blows between the patient’s shoulder blades. \nCheck between each back blow to see if the item has been dislodged.
-\nPlace a baby face down on your lap for the back blows. Ensure you support the baby’s head. Give firm back blows, checking between each to see if the item is dislodged."
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/textView17"
                 android:layout_width="278dp"
                 android:layout_height="38dp"
@@ -108,6 +97,17 @@
                 android:text="2.    If unsuccessful, give up to 5 chest thrusts"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="385dp"
+                android:layout_height="178dp"
+                android:layout_marginTop="10dp"
+                android:text="With an adult or child, standing or sitting (and leaning forward), and using the heel of one hand, give the back blows between the patient’s shoulder blades. \nCheck between each back blow to see if the item has been dislodged.
+\nPlace a baby face down on your lap for the back blows. Ensure you support the baby’s head. Give firm back blows, checking between each to see if the item is dislodged."
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
