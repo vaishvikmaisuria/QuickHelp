@@ -49,6 +49,14 @@
         <activity android:name=".Notification" />
         <activity android:name=".additional_Details" />
         <activity android:name=".SearchingActivity"></activity>
+        <activity android:name=".self_help_blocked_airway"
+            android:label="Blocked Airway"/>
+        <activity android:name=".self_help_brokenbone"/>
+        <activity android:name=".self_help_burn"/>
+        <activity android:name=".self_help_bleeding"/>
+        <activity android:name=".self_help_heart"/>
+        <activity android:name=".self_help_unconscious"/>
+        <!--<activity android:name=".help_severity"/>-->
         <activity android:name=".ValidateDoctor" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
