@@ -92,11 +92,6 @@ public class Medical_History2 extends AppCompatActivity {
             }
         });
 
-
-
-
-
-
     }
 
     public void onCheckboxClicked(View view) throws JSONException {
