@@ -101,37 +101,39 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
             return;
         }
         Location location = locationManager.getLastKnownLocation(provider);
-        double latitude = location.getLatitude();
-        double longitude = location.getLongitude();
+        if (location != null) {
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
 
-        sosActive = getSOSId();
-        if (sosActive != "null") {
-            json = getSOSInfo(sosActive);
-            try {
-                patientlat = (double) json.get("latitude");
-                patientlong = (double) json.get("longitude");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            place1 = new MarkerOptions().position(new LatLng(latitude, longitude)).title("You");
-
-            if (patientlong != null && patientlat != null) {
-                place2 = new MarkerOptions().position(new LatLng(patientlat, patientlong)).title("Patient");
-                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    return;
+            sosActive = getSOSId();
+            if (sosActive != "null") {
+                json = getSOSInfo(sosActive);
+                try {
+                    patientlat = (double) json.get("latitude");
+                    patientlong = (double) json.get("longitude");
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-                mGoogleMap.setMyLocationEnabled(true);
 
-                new FetchURL(this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
+                place1 = new MarkerOptions().position(new LatLng(latitude, longitude)).title("You");
 
-                googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                if (patientlong != null && patientlat != null) {
+                    place2 = new MarkerOptions().position(new LatLng(patientlat, patientlong)).title("Patient");
+                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    mGoogleMap.setMyLocationEnabled(true);
 
-                googleMap.addMarker(place1);
-                googleMap.addMarker(place2);
-                CameraPosition Liberty = CameraPosition.builder().target(new LatLng(latitude, longitude)).zoom(18).bearing(0).tilt(45).build();
+                    new FetchURL(this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
 
-                googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Liberty));
+                    googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+                    googleMap.addMarker(place1);
+                    googleMap.addMarker(place2);
+                    CameraPosition Liberty = CameraPosition.builder().target(new LatLng(latitude, longitude)).zoom(18).bearing(0).tilt(45).build();
+
+                    googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(Liberty));
+                }
             }
         }
     }
