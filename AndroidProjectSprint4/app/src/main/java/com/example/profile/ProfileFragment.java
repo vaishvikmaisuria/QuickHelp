@@ -1,5 +1,6 @@
 package com.example.profile;
 
+import android.Manifest;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -20,6 +21,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,10 +32,14 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gun0912.tedpermission.PermissionListener;
+import com.gun0912.tedpermission.TedPermission;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.BreakIterator;
+import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -89,7 +95,15 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+        // makes sure Permissions are granted as of latest Android versions
+        TedPermission.with(getActivity())
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                .setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
+
         return v;
+
 
     }
 
@@ -104,16 +118,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             // the path to the image in the phone
             realPath = ImageFilePath.getPath(this.getActivity(), selectedImage);
 
-            // creating the bitmap of the image
-            String[] filePathColumn = { MediaStore.Images.Media.DATA };
-            Cursor cursor = getActivity().getContentResolver().query(selectedImage,
-                    filePathColumn, null, null, null);
-            cursor.moveToFirst();
+            // store photo path in database
 
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            picturePath = cursor.getString(columnIndex);
-            cursor.close();
-            photo = BitmapFactory.decodeFile(picturePath);
+            photo = BitmapFactory.decodeFile(realPath);
 
             // crops image, makes into a circle and sets as profile picture
             performCrop();
@@ -199,8 +206,20 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         intent.putExtra("return-data", true);
+        Log.d("Open Gallery", "In here");
         startActivityForResult(
                 Intent.createChooser(intent, "Complete action using"),
                 PICK_FROM_GALLERY);
     }
+    PermissionListener permissionlistener = new PermissionListener() {
+        @Override
+        public void onPermissionGranted() {
+            //Toast.makeText(ValidateDoctor.this, "Permission Granted", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onPermissionDenied(List<String> deniedPermissions) {
+            //Toast.makeText(ValidateDoctor.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+        }
+    };
 }
