@@ -198,6 +198,10 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     *  Load user fields
+     *
+     */
     private void updateFields(JSONObject user) {
         try {
             name.setText(User.User1.get("firstName").toString());
