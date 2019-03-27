@@ -10,15 +10,18 @@ PRODUCT BACKLOG- **QUICK HELP**
 | As a skilled individual with medical certifications, I want to be able to receive notifications when there are people in need that I can help so that I am able to apply my skills to help people in need | 2 | 5 |
 | As a user in need of medical assistance, I want to be able to display a panic mode so that a doctor is able to locate me faster | 1| 2|
 | As a skilled individual with medical certifications, I can better assist a patient if I have clear knowledge about medical information about the patient | 1 | 1 |
-| As a regular user, I want to be able to cancel the SOS signal if help from other sources was received so that I don't waste a skilled individual's time | 2 | 13 |
+| As a regular user, I want to be able to cancel the SOS signal if help from other sources was received so that I don't waste a skilled individual's time | 2 | 5 |
 | As a skilled individual with medical certifications, I want to be able to accept or dismiss emergency or help notifications, so that i can inform the app when i am able to help them | 3 | 13 |
 | As a user who received medical assistance, I want to be able to rate the doctor that helped me to credit them fro their work | 1 | 1 |
 | As a skilled individual with medical certifications, I want to be able to select if I'm available by selecting online or offline so that I can help others when I'm free | 2 | 5 |
 | As a user of the app, I want to be able to talk to other users and skilled individuals using this app so that I can be engaged with the community of this app | 1 | 1 |
-| As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 13 |
+| As a concerned individual using the app, I want the identities of all users of the app to be verified | 2 | 5 |
 | As a user in need of medical assistance, I want to be able to receive help when no doctors are available  by being guided them through simple medical procedures | 1 | 2 |
+| As a user of the app, I want to be able to upload documents to the app to be able to share my certifications and identity documents with the admins of the app. | 2 | 13 |
 | As a user of the app, I want to be able to be verified as a medical professional to be able to use this app to assist others | 3 | 13|
 | As a user using the app, I want to be able to reset my password if I forgot it | 1 | 3|
+| As a user of the app, I want to be able to add a profile picture so that other users can recognize me | 1 | 3 |
+| As a registered user, I would like to logout in order to end my session | 3 | 13 |
 
 PIVOTALTRACKER POINTS: 
   PivotalTracker does not support the quasi-fibonnaci system we used for scaling.
