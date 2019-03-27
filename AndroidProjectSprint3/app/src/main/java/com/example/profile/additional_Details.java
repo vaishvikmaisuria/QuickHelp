@@ -81,22 +81,17 @@ public class additional_Details extends AppCompatActivity {
 
                     send = new JSONObject();
                     if(map.get("Broken Bones")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
-                        //flag1 = "Broken Bones";
-                        //flag1 = "Broken Bones";
-                        //intent = new Intent(view.getContext(), self_help_brokenbone.class);
                         startActivity(intent);
 
                     }else{
                         textView10.setText("false");
                     }
                     if(map.get("Choking")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
 
                         Intent intent = new Intent(view.getContext(), self_help_blocked_airway.class);
-                        //flag1 = "Choking";
-                        //intent = new Intent(view.getContext(), self_help_blocked_airway.class);
                         startActivity(intent);
 
                     }else{
@@ -104,75 +99,67 @@ public class additional_Details extends AppCompatActivity {
                     }
 
                     if(map.get("Bleeding")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
 
                         Intent intent = new Intent(view.getContext(), self_help_bleeding.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_bleeding.class);
 
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Fire Related Injury")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_burn.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_burn.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Joint Twist")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_brokenbone.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Unconsciousness")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
 
                         Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Heart Stroke")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_heart.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_heart.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Asthma")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Poisoning")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
                         startActivity(intent);
-                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
                     }else{
                         textView10.setText("false");
                     }
 
                     if(map.get("Drowning")){
-                        textView10.setText("true");
+                        //textView10.setText("true");
                         Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
-                        //intent = new Intent(view.getContext(), self_help_unconcious.class);
                         startActivity(intent);
                     }else{
                         textView10.setText("false");
@@ -232,19 +219,6 @@ public class additional_Details extends AppCompatActivity {
             }
         });
     }
-//    public void goselfhelpbone(View view) {
-//        Intent intent = new Intent(this, self_help_brokenbone.class);
-//        startActivity(intent);
-//    }
-//    public void goselfhelpchoke(View view) {
-//        Intent intent = new Intent(this, self_help_blocked_airway.class);
-//        startActivity(intent);
-//    }
-//
-//    public void gohelpseverity(View view) {
-//        Intent intent = new Intent(this, help_severity.class);
-//        startActivity(intent);
-//    }
 
     public void onCheckboxClicked(View view) throws JSONException {
         boolean checked = ((CheckBox) view).isChecked();
@@ -335,7 +309,7 @@ public class additional_Details extends AppCompatActivity {
 
             
         }
-        //startActivity(intent);
+
     }
 
     public JSONObject initJSON() throws  JSONException{
