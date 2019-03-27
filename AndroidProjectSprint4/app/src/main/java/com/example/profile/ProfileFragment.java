@@ -32,6 +32,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.profile.httpRequestHelpers.httpPostRequest;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
@@ -39,7 +40,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.BreakIterator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -49,6 +53,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private TextView username;
     ImageView profileImage;
     private static final int PICK_FROM_GALLERY = 101;
+    String endpoint = "https://quick-health.herokuapp.com";
     String realPath;
     private Bitmap photo;
     private Switch aSwitch;
@@ -119,6 +124,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             realPath = ImageFilePath.getPath(this.getActivity(), selectedImage);
 
             // store photo path in database
+            storePhotoPath(realPath);
 
             photo = BitmapFactory.decodeFile(realPath);
 
@@ -192,10 +198,22 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    /**
+     *  Load user fields
+     *
+     */
     private void updateFields(JSONObject user) {
         try {
             name.setText(User.User1.get("firstName").toString());
             username.setText(User.User1.get("username").toString());
+
+            String path = getPhotoPath().toString();
+
+            if (path != "null") {
+                photo = BitmapFactory.decodeFile(path);
+                performCrop();
+            }
+
         }catch (JSONException e){
             return;
         }
@@ -222,4 +240,62 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             //Toast.makeText(ValidateDoctor.this, "Permission Denied\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
         }
     };
+
+    /*
+     *   Store photo path
+     */
+    public void storePhotoPath(String path) {
+        try {
+
+            // Get current logged in user's id
+            String id = User.getUser().get("_id").toString();
+
+            // Create request body
+            Map<String, String> body = new HashMap<>();
+            body.put("id", id);
+            body.put("path", path);
+
+
+            // Create request to fetch user info
+            httpPostRequest task = new httpPostRequest(body);
+
+            String result = task.execute(endpoint + "/user/profilePicture").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+     *
+     */
+    public String getPhotoPath() {
+        String photoPath = null;
+
+        try {
+            // Get current logged in user's id
+            String id = User.getUser().get("_id").toString();
+
+            // Create request body
+            Map<String, String> body = new HashMap<>();
+            body.put("id", id);
+
+            // Create request to fetch user info
+            httpPostRequest task = new httpPostRequest(body);
+
+            String result = task.execute(endpoint + "/user/getProfilePicture").get();
+            JSONObject json = new JSONObject(result);
+            photoPath = json.get("path").toString();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return photoPath;
+    }
 }
