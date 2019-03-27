@@ -1,4 +1,3 @@
-*NOTE: System design document underwent no changes this phase. A single paragraph explanation- as the professor required- has been attached to the bottom of the document.*
 
 # Sprit Release Meeting 4 - QuickHealth
 ---
@@ -26,7 +25,7 @@ In this meeting, the QuickHealth team reflected on Sprint 3, and what went well 
 
 After successfully meeting our goals in the previoius sprint, our team is motivated to continue developing the app at a rapid pace. As the team realizes that we are nearing the end of the semester, all members are motivated to complete as much as possible in this sprint. Leveraging what we've learned from completing previous user stories, our team continued to build more features.
 
-As sprint 4 was he most productive among all previous sprints, this sprint has provided us with the most significant highlights of the project so far. We were able to meet and surpass sprint goals, applying our learning from previous sprints on what it truly means to work in a team. Not only were we able to comfortably assign tasks to members that we know are capable of completing them, and follow through with the assigned tasks, members that felt confident in the tasks assigned and were able to complete them early rose up to the task, tackling other related items and helping their colleagues. Therefore, our team is ready is tackle all essential features of the app in the upcoming sprints.
+As sprint 4 was he most productive among all previous sprints, this sprint has provided us with the most significant highlights of the project so far. We were able to meet and surpass sprint goals, applying our learning from previous sprints on what it truly means to work in a team. Not only were we able to comfortably assign tasks to members that we know are capable of completing them, and follow through with the assigned tasks, members that felt confident in the tasks assigned and were able to complete them early rose up to the task, tackling other related items and helping their colleagues. Therefore, our team is ready is tackle all remaining features of the app for the conclusion of the semester.
 
 ### Release Goals and Plans 
 1. For this release, we have selected to focus on the following user stories: 
@@ -39,7 +38,6 @@ As sprint 4 was he most productive among all previous sprints, this sprint has p
 	- Emergency Contact
 	- Update Injury Type
 	- Add Profile Picture
-	- 
 
 2. The main focus will be to finish all user stories assigned in each subteam's individual branches, and combine them into one executable application on the master branch. This ensures that all members are fully aware of how their feature interacts with the main application and solidifies their understanding of all user stories. Merging completed user stories as soon as possible will allow us to resolve any merge conflicts early on in the development process instead of pushing it into later sprints.
 
