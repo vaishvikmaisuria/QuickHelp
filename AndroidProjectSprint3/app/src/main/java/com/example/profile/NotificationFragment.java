@@ -1,12 +1,12 @@
 package com.example.profile;
 
-import android.content.Context;
-import android.location.LocationManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,23 +16,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.profile.httpRequestHelpers.httpGetRequest;
+import com.android.volley.RequestQueue;
+import com.example.profile.httpRequestHelpers.fetchData;
+import com.example.profile.httpRequestHelpers.httpPostRequest;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class NotificationFragment extends Fragment implements View.OnClickListener {
 
     private static final int REQUEST_LOCATION = 1;
     Button button;
-    TextView textView;
+    public static TextView textView;
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
+    private MyAdapter adapter;
+    JSONObject sendSOS;
 
-    private List<sosRequest> listItems;
+    private RequestQueue mQueue;
+
+
+    public static List<sosRequest> listItems;
 
     @Nullable
     @Override
@@ -47,55 +53,98 @@ public class NotificationFragment extends Fragment implements View.OnClickListen
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         listItems = new ArrayList<>();
-//
-//        listItems.add(
-//                new sosRequest(0, "First Dummy Request",
-//                        "Dont Do anything")
-//        );
+        adapter = new MyAdapter(listItems, getActivity());
 
-        for(int i =0; i<=10; i++){
-            sosRequest listitem =  new sosRequest(i, "heading" + (i+1),
-                        "Dummy text That states the type of injury"
-            );
-            listItems.add(listitem);
-        }
+        fetchData process = new fetchData();
+        process.execute();
 
-        adapter = new MyAdapter(listItems, getActivity() );
 
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new MyAdapter.OnItemClickListener() {
+            @Override
+            public void onAcceptClick(int position) {
+
+                Log.d("sos request id",String.valueOf(adapter.requestList.get(position).getSosID()));
+                Log.d("Location", String.valueOf(adapter.requestList.get(position).getHeader()));
+                try {
+                    Log.d("Doctor ID", User.getUser().get("_id").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                sendSOS = new JSONObject();
+
+                try {
+                    sendSOS.put("doctorID",User.getUser().get("_id").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    sendSOS.put("sosID",String.valueOf(adapter.requestList.get(position).getSosID()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                //link to patch the sos collection
+                httpPostRequest task = new httpPostRequest(null);
+                task.setJSON(sendSOS);
+                task.execute("https://quick-health.herokuapp.com/sos/updateSOSDoctor");
+
+                //link to patch the user collection
+                httpPostRequest task2 = new httpPostRequest(null);
+                task2.setJSON(sendSOS);
+                task2.execute("https://quick-health.herokuapp.com/user/updateSOSDoctor");
+
+
+                sosData.setLocationlong(adapter.requestList.get(position).getLongitude());
+                sosData.setLocationlat(adapter.requestList.get(position).getLatitude());
+                ChangeView();
+
+            }
+        });
 
         textView = (TextView) v.findViewById(R.id.text_request);
         button = (Button) v.findViewById(R.id.button_notification);
 
         button.setOnClickListener(this);
 
+
         return v;
 
     }
 
-    public  NotificationFragment() {}
+    public void ChangeView(){
+        // Create new fragment and transaction
+        Fragment newFragment = new MapFragment();
+        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+
+// Replace whatever is in the fragment_container view with this fragment,
+// and add the transaction to the back stack if needed
+        transaction.replace(R.id.fragment_container, newFragment);
+        transaction.addToBackStack(null);
+
+// Commit the transaction
+        transaction.commit();
+    }
+
+    public NotificationFragment() {
+    }
+
+    public JSONObject initJSON() throws  JSONException{
+        JSONObject x = new JSONObject();
+        x.put("doctorID","");
+        x.put("sosID","");
+        return x;
+    }
 
     @Override
     public void onClick(View view) {
 
-        // Some url endpoint that you may have
-        String myUrl = "https://quick-health.herokuapp.com/sos/allSOS";
-        //String to place our result in
-        String result = "none";
-        //Instantiate new instance of our class
-        httpGetRequest getRequest = new httpGetRequest();
-        //Perform the doInBackground method, passing in our url
-        try {
-            result = getRequest.execute(myUrl).get();
-            textView.setText(result);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        fetchData process = new fetchData();
+        process.execute();
 
-//        textView.setText("NONN");
-
+        recyclerView.setAdapter(adapter);
     }
-
 }
+
