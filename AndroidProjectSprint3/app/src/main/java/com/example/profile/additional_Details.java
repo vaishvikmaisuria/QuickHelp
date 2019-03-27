@@ -58,13 +58,6 @@ public class additional_Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional__details);
 
-//        map.put("Broken Bones",false);
-//        try {
-//            change = initJSON();
-//
-//        }catch (JSONException e){
-//            e.printStackTrace();
-//        }
 
         textbox = (TextInputEditText) findViewById(R.id.textbox22);
 
@@ -86,16 +79,6 @@ public class additional_Details extends AppCompatActivity {
         selfhelpbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                try{
-//                    onCheckboxClicked(view);
-//                }catch(Exception e){
-//
-//                }
-                //boolean checked = ((CheckBox) R.id.checkBoxbrokenBones).isChecked();
-//                System.out.println("hi");
-//                addToMap(view);
-//                System.out.println("bye");
-//                System.out.println(map.get("Broken Bones"));
 
                     if ((map.get("Broken Bones") != null) && (map.get("Broken Bones"))) {
                         selfhelpbone(view);
@@ -155,72 +138,7 @@ public class additional_Details extends AppCompatActivity {
 
 
 
-//                switch (view.getId()) {
-//
-//                    case R.id.checkBoxbrokenBones:
-//                        if (checked) {
-//                            selfhelpbone(view);
-//                            Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxChoking:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_blocked_airway.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//
-//                    case R.id.checkBoxBleeding:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_bleeding.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxfire:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_burn.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxjointTwist:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_brokenbone.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxUnconciousness:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxHeartStroke:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_heart.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxAsthma:
-//                        if (checked){
-//                            Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                    case R.id.checkBoxPoisoning:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//
-//                    case R.id.checkBoxDrowning:
-//                        if (checked) {
-//                            Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
-//                            startActivity(intent);
-//                        }
-//                        break;
-//                }
+
 
             }
 
@@ -235,43 +153,6 @@ public class additional_Details extends AppCompatActivity {
             public void onClick(View view) {
                 addToMap(view);
 
-
-//                try {
-//                    onCheckboxClicked(view);
-////                    send = new JSONObject();
-//////
-////
-////
-////                    String Desc = "";
-////
-////
-////                    for (Map.Entry<String, Boolean> entry : map.entrySet()) {
-////                        if (entry.getValue()) {
-////                            Desc += " " + entry.getKey() + " ,";
-////                        }
-////                    }
-////                    if (Desc == null || Desc.length() == 0) {
-////                        Desc = textbox.getText().toString();
-////                        if (Desc == null || Desc.length() == 0) {
-////                            flag = false;
-////                        } else {
-////                            flag = true;
-////                        }
-////                    } else {
-////                        flag = true;
-////                    }
-////
-////
-////                    send.put("id", sosData.getSos1().substring(8, 32));
-////                    send.put("injuryDetails", Desc);
-////                    httpPostRequest task = new httpPostRequest(null);
-////                    task.setJSON(send);
-////                    //link to patch the sos collection
-////                    task.execute("https://quick-health.herokuapp.com/sos/updateSOS");
-//
-//                } catch (Exception e) {
-//                    Log.d(TAG, e.getLocalizedMessage());
-//                }
 
                 // go to the next page waiting for the doctor
                 if (flag) {
