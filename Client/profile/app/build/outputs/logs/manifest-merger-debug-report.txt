@@ -1,0 +1,222 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+MERGED from [com.android.support:design:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f40f257936d3d83637c07afd4085bdb8/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/9d1fdd151c226b6cf6da623c406db388/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/wentong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/516fe3d42e4c6e1f1dad3c14504d1562/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/a6c7ed996b42705897a0315d6dfa2012/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/bd6acd94d63b113440eb3c18aa79ff16/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/5c48de259c4d41e4e033322a44932751/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c1ae49f3d3b4b7af20767123b3ddae22/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/62b8bd54d36e6166e16e7a763ad03b28/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/f048255203db506653513a1515b2aba5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/d048cb31f6bc6f6f00c0722804cad3e9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/19983dd436175ae704717e386e2f34d4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/36f81a62284c882e8c1fe34c791e4e36/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/cd3ffb6c3494c361ad462feab8110ac9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5f27084a59bc4f744d11ab848d2e95a0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/e5a6c057c86a48f4ea13f67bb104c68e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/8894075f4e370f51129e1aa179e8b83b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/6e1e22a1ac48004dac14bbc0b5b809ac/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3a9e10cfdfe44069df47a06ce8a9cf5f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/8233510c59055b879457af4acb575b98/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/bc91b59230e1030629523b8377defe47/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/9f5ddf8d1a7dcc8d76ad454180eca83c/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f0630c61c9f4ed15cd66a9bd45d25ccb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/a031ac5048dd05adc91e7803e1a02b79/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/f75529b11d61e62a311d8c4a05ef9273/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f7545d6ba38d60d06bee3a4ddcc3bd27/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/50d40c10eb86835e3c5d33c49eee78f2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/7af5816d8a0605df2f322c7ca1f6558f/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/4bd1509243e0b304a940263ebbf009b3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9a0d16b50eb121c7ace86faf2a174862/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/378f80cfe2bcbcfc1962b2527c17f6bd/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+	package
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:3:5-34
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:1-70:12
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:5:5-68:19
+MERGED from [com.android.support:design:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f40f257936d3d83637c07afd4085bdb8/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f40f257936d3d83637c07afd4085bdb8/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/wentong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/516fe3d42e4c6e1f1dad3c14504d1562/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/wentong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/516fe3d42e4c6e1f1dad3c14504d1562/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/8233510c59055b879457af4acb575b98/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/8233510c59055b879457af4acb575b98/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.example.profile.Medical_History2
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:12:9-20:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:15:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:14:13-52
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:13:13-45
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:16:13-18:68
+	android:value
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:18:17-65
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:17:17-63
+activity#com.example.profile.Register
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:21:9-28:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:24:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:23:13-45
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:22:13-37
+activity#com.example.profile.Profile
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:29:9-36:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:32:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:31:13-44
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:30:13-36
+activity#com.example.profile.SOS_Signal
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:37:9-44:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:40:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:39:13-47
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:38:13-39
+activity#com.example.profile.Medical_History
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:45:9-52:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:48:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:47:13-52
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:46:13-44
+activity#com.example.profile.Login
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:53:9-60:20
+	android:parentActivityName
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:56:13-55
+	android:label
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:55:13-42
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:54:13-34
+activity#com.example.profile.MainActivity
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:61:9-67:20
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:61:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:62:13-66:29
+action#android.intent.action.MAIN
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:63:17-69
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:63:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:65:17-77
+	android:name
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml:65:27-74
+uses-sdk
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f40f257936d3d83637c07afd4085bdb8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/f40f257936d3d83637c07afd4085bdb8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/9d1fdd151c226b6cf6da623c406db388/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/9d1fdd151c226b6cf6da623c406db388/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/wentong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/516fe3d42e4c6e1f1dad3c14504d1562/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/wentong/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/516fe3d42e4c6e1f1dad3c14504d1562/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/a6c7ed996b42705897a0315d6dfa2012/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/a6c7ed996b42705897a0315d6dfa2012/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/bd6acd94d63b113440eb3c18aa79ff16/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/bd6acd94d63b113440eb3c18aa79ff16/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/5c48de259c4d41e4e033322a44932751/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/5c48de259c4d41e4e033322a44932751/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c1ae49f3d3b4b7af20767123b3ddae22/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/c1ae49f3d3b4b7af20767123b3ddae22/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/62b8bd54d36e6166e16e7a763ad03b28/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/62b8bd54d36e6166e16e7a763ad03b28/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/f048255203db506653513a1515b2aba5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/f048255203db506653513a1515b2aba5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/d048cb31f6bc6f6f00c0722804cad3e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/d048cb31f6bc6f6f00c0722804cad3e9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/19983dd436175ae704717e386e2f34d4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/19983dd436175ae704717e386e2f34d4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/36f81a62284c882e8c1fe34c791e4e36/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/36f81a62284c882e8c1fe34c791e4e36/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/cd3ffb6c3494c361ad462feab8110ac9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/cd3ffb6c3494c361ad462feab8110ac9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5f27084a59bc4f744d11ab848d2e95a0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/5f27084a59bc4f744d11ab848d2e95a0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/e5a6c057c86a48f4ea13f67bb104c68e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/e5a6c057c86a48f4ea13f67bb104c68e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/8894075f4e370f51129e1aa179e8b83b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/8894075f4e370f51129e1aa179e8b83b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/6e1e22a1ac48004dac14bbc0b5b809ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/6e1e22a1ac48004dac14bbc0b5b809ac/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3a9e10cfdfe44069df47a06ce8a9cf5f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/3a9e10cfdfe44069df47a06ce8a9cf5f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/d486d02f8ba1fd096704d9e78e795be1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/8233510c59055b879457af4acb575b98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/8233510c59055b879457af4acb575b98/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/bc91b59230e1030629523b8377defe47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/bc91b59230e1030629523b8377defe47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/9f5ddf8d1a7dcc8d76ad454180eca83c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/9f5ddf8d1a7dcc8d76ad454180eca83c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f0630c61c9f4ed15cd66a9bd45d25ccb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/f0630c61c9f4ed15cd66a9bd45d25ccb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/a031ac5048dd05adc91e7803e1a02b79/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/a031ac5048dd05adc91e7803e1a02b79/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/f75529b11d61e62a311d8c4a05ef9273/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/f75529b11d61e62a311d8c4a05ef9273/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f7545d6ba38d60d06bee3a4ddcc3bd27/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/f7545d6ba38d60d06bee3a4ddcc3bd27/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/50d40c10eb86835e3c5d33c49eee78f2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/50d40c10eb86835e3c5d33c49eee78f2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/7af5816d8a0605df2f322c7ca1f6558f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/wentong/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/7af5816d8a0605df2f322c7ca1f6558f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/4bd1509243e0b304a940263ebbf009b3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/4bd1509243e0b304a940263ebbf009b3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9a0d16b50eb121c7ace86faf2a174862/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/9a0d16b50eb121c7ace86faf2a174862/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/378f80cfe2bcbcfc1962b2527c17f6bd/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/wentong/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/378f80cfe2bcbcfc1962b2527c17f6bd/AndroidManifest.xml:20:5-44
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		ADDED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/wentong/AndroidStudioProjects/profile/app/src/main/AndroidManifest.xml

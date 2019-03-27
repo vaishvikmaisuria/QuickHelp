@@ -29,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+//
+//        int intentFragment = getIntent().getExtras().getInt("frgToLoad");
+//        if (intentFragment == 2) {
+//            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+//                    new MapFragment()).commit();
+//        }
+
+
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

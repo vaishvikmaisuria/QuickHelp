@@ -10,7 +10,8 @@ router.post("/newSOS", (req, res) => {
             helperID: "",
             injuryDetails: "",
             longitude: req.body.longitude,
-            latitude: req.body.latitude
+            latitude: req.body.latitude,
+            Active: true
         })
     
         newSOS.save().then(sos => {
@@ -33,7 +34,7 @@ router.patch("/updateDoc", (req, res) => {
 });
 
 router.get("/allSOS", (req, res) => {
-    Sos.find().then(allSos => {
+    Sos.find({ Active: true }).then(allSos => {
         if (allSos) {
             res.send({ allSos });
         }

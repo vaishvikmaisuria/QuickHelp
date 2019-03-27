@@ -14,6 +14,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 //import android.view.View;
 import android.view.View;
@@ -25,9 +26,11 @@ import android.widget.Toast;
 import com.example.profile.httpRequestHelpers.httpPostRequest;
 
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 
 public class SOSFragment extends Fragment implements View.OnClickListener {
@@ -136,7 +139,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
             //String myUrl = "http://localhost:3000";
 
             //String to place our result in
-            String result;
+            String result = null;
 
             //Create the Json Object
             //JSONObject sosLocation = new JSONObject();
@@ -151,7 +154,26 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
             //Perform the doInBackground method, passing in our url
 
-            task.execute(myUrl + "/sos/newSOS");
+            try {
+                result = task.execute(myUrl + "/sos/newSOS").get();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            }
+
+            JSONObject JO = new JSONObject(result);
+
+
+            // Completed the Task JO is the json object with the id
+            Log.d("JSON", JO.get("_id").toString());
+
+            // this adds the json object to sosDAta
+            sosData.setUsersos(JO);
+
+
+            // this adds the string result
+            sosData.setUser(result);
 
 
         }
