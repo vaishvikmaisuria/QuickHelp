@@ -41,6 +41,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".Location_Service"/>
+        <service android:name=".SOS_Service"/>
         <activity
             android:name=".map_Activity"
             android:label="@string/title_activity_map_"

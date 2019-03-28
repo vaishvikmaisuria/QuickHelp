@@ -17,6 +17,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.IO;
@@ -38,6 +39,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private ArrayAdapter<String> adapter;
     private Boolean hasConnection = false;
     private Socket mSocket;
+    private TextView title;
 
 
     @Nullable
@@ -50,6 +52,18 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         sendMsg = v.findViewById(R.id.sendMessageButton);
         itemlist = v.findViewById(R.id.messageListView);
         writtenMessage = v.findViewById(R.id.messageTextField);
+        title = v.findViewById(R.id.chatTitle);
+
+
+
+        if(User.acceptedUser != null || User.acceptedDocter != null){
+            if(User.acceptedUser != null){
+                title.setText("Chatting with " + User.acceptedUser);
+            }else {
+                title.setText("Chatting with " + User.acceptedDocter);
+            }
+
+        }
 
 
         if(!hasConnection){
@@ -68,9 +82,22 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
 
         adapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,User.items);
         itemlist.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
         return v;
 
+    }
+
+    private String getRecipiant(){
+        if(User.acceptedUser != null || User.acceptedDocter != null){
+            if(User.acceptedUser != null){
+                return User.acceptedUser;
+            }else {
+                return User.acceptedDocter;
+            }
+
+        }
+        return null;
     }
 
 
@@ -81,24 +108,28 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()) {
             case R.id.sendMessageButton: {
-                try {
-                    String userId = User.User1.get("username").toString();
-                    String message = writtenMessage.getText().toString();
-                    User.items.add(userId + ":" + " " + message);
-                    JSONObject sendObj = new JSONObject();
-                    sendObj.put("username",userId);
-                    sendObj.put("message",message);
-                    mSocket.emit("MESSAGE",sendObj);
-                }catch(Exception e){
-                    e.printStackTrace();
+                if (getRecipiant() != null) {
+                    try {
+                        String userId = User.User1.get("username").toString();
+                        String message = writtenMessage.getText().toString();
+                        User.items.add(userId + ":" + " " + message);
+                        JSONObject sendObj = new JSONObject();
+                        sendObj.put("from", userId);
+                        sendObj.put("to", getRecipiant());
+                        sendObj.put("message", message);
+                        mSocket.emit("MESSAGE", sendObj);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    writtenMessage.setText("");
+                    adapter.notifyDataSetChanged();
+                    break;
                 }
+                User.items.add("------ chat is offline ------");
                 writtenMessage.setText("");
                 adapter.notifyDataSetChanged();
                 break;
             }
-
-
-
 
 
         }
@@ -112,10 +143,10 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void run() {
                     try {
-                        JSONObject data = (JSONObject) args[0];
-                        String userId = data.getString("username");
-                        String message = data.getString("message");
-                        User.items.add(userId + ":" + " " + message);
+//                        JSONObject data = (JSONObject) args[0];
+//                        String userId = data.getString("from");
+//                        String message = data.getString("message");
+//                        User.items.add(userId + ":" + " " + message);
                         adapter.notifyDataSetChanged();
 
                     }catch (Exception e){

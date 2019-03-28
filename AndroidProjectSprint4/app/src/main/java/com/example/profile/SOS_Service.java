@@ -27,6 +27,7 @@ import static com.example.profile.App.CHANNEL_ID;
 public class SOS_Service extends Service {
     public static final String CHANNEL3_ID = "sosAServiceChannel";
     public static final String CHANNEL4_ID = "sosBServiceChannel";
+    public static final String CHANNEL5_ID = "chatServiceChannel";
     private HandlerThread handlerThread;
     private Handler handler;
     private Looper looper;
@@ -61,6 +62,7 @@ public class SOS_Service extends Service {
                 // instantiate socket connection
                 lSocket = GSocket.getInstance();
                 lSocket.on("SOSaccepted", sosListener);
+                lSocket.on("MESSAGE",onNewMessage);
 
 
                 // establish the socket connection
@@ -125,6 +127,21 @@ public class SOS_Service extends Service {
         }
     }
 
+    private void createNotificationChannel3(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL5_ID,
+                    "CHAT Service Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+
+
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
+    }
+
     public void sosNotification (String Username){
         createNotificationChannel2();
 
@@ -132,9 +149,27 @@ public class SOS_Service extends Service {
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL4_ID)
-                .setContentTitle("SOS CALL ACCEPTRF")
+                .setContentTitle("SOS CALL ACCEPTED")
                 .setContentText( Username + " has accepted your sos call come chat!")
                 .setSmallIcon(R.drawable.circle)
+                .setContentIntent(pendingIntent)
+                .build();
+
+        NotificationManager amanager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        amanager.notify(2,notification);
+
+    }
+
+    public void sosNotification2( String msg){
+        createNotificationChannel3();
+
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL5_ID)
+                .setContentTitle("CHAT MESSAGE FROM DOCTOR")
+                .setContentText(msg)
+                .setSmallIcon(R.drawable.ic_chat_icon2)
                 .setContentIntent(pendingIntent)
                 .build();
 
@@ -150,8 +185,26 @@ public class SOS_Service extends Service {
             try {
                 JSONObject data = (JSONObject) args[0];
                 sosNotification(data.getString("doctorID"));
-                User.setacceptedUser(data.getString("doctorID"));
+                User.setacceptedDoctor(data.getString("doctorID"));
             }catch (Exception e) {}
         }
+    };
+
+    Emitter.Listener onNewMessage = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+
+                try {
+                    JSONObject data = (JSONObject) args[0];
+                    String userId = data.getString("from");
+                    String message = data.getString("message");
+                    User.items.add(userId + ":" + " " + message);
+                    sosNotification2(userId + ":" + " " + message);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
     };
 }

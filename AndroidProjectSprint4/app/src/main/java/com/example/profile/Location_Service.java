@@ -45,6 +45,7 @@ public class Location_Service extends Service {
     private int x = 20000;
     private boolean isRunning;
     public static final String CHANNEL2_ID = "sosServiceChannel";
+    public static final String CHANNEL6_ID = "chatBServiceChannel";
     private Socket lSocket;
 
     @Nullable
@@ -73,7 +74,7 @@ public class Location_Service extends Service {
                 // instantiate socket connection
                 lSocket = GSocket.getInstance();
                 lSocket.on("SOS",sosListener);
-
+                lSocket.on("MESSAGE",onNewMessage);
 
                 // establish the socket connection
 
@@ -188,15 +189,70 @@ public class Location_Service extends Service {
     }
 
 
+    private void createNotificationChannel3(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel serviceChannel = new NotificationChannel(
+                    CHANNEL6_ID,
+                    "CHAT Service Channel",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+
+
+
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(serviceChannel);
+        }
+    }
+
+    public void sosNotification2( String msg){
+        createNotificationChannel3();
+
+
+        Intent notificationIntent = new Intent(this, MainActivity.class);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL6_ID)
+                .setContentTitle("CHAT MESSAGE FROM PATIENT")
+                .setContentText(msg)
+                .setSmallIcon(R.drawable.ic_chat_icon2)
+                .setContentIntent(pendingIntent)
+                .build();
+
+        NotificationManager amanager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        amanager.notify(2,notification);
+
+    }
+
+
     Emitter.Listener sosListener = new Emitter.Listener() {
         @Override
         public void call(Object... args) {
+
             try {
                 JSONObject data = (JSONObject) args[0];
                 sosNotification(data.getString("username"));
                 User.setacceptedUser(data.getString("firstName"));
             }catch (Exception e) {}
         }
+    };
+
+
+    Emitter.Listener onNewMessage = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+
+                try {
+                    JSONObject data = (JSONObject) args[0];
+                    String userId = data.getString("from");
+                    String message = data.getString("message");
+                    User.items.add(userId + ":" + " " + message);
+                    sosNotification2(userId + ":" + " " + message);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+
+
+
     };
 
 
