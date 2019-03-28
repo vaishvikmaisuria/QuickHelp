@@ -59,7 +59,7 @@
 | Sign Out | As a regular user, I want to be able to Sign out so that my account is secure and my personal information is not stolen |P | 8 |  |
 | | Implement logout backend | P  | 2 | 2 |
 | | Implement logout frontend view | P  | 6 |  |
-| | Add Profile Picture | A C | As a user of the app, I want to be able to add a profile picture so that other users can recognize me | A | 12 | 10 |
+| Add Profile Picture | A C | As a user of the app, I want to be able to add a profile picture so that other users can recognize me | 12 | 10 |
 | | Add the uploaded picture as a cropped circle on the profile page| A  | 6 | 4 |
 | | Save the uploaded picture in a server so that it remains there after the session is cancelled | C | 6 | 6 |
 
