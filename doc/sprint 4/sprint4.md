@@ -62,6 +62,15 @@
 | Add Profile Picture | A C | As a user of the app, I want to be able to add a profile picture so that other users can recognize me | 12 | 10 |
 | | Add the uploaded picture as a cropped circle on the profile page| A  | 6 | 4 |
 | | Save the uploaded picture in a server so that it remains there after the session is cancelled | C | 6 | 6 |
+| Chat | As a user of the app, I want to be able to talk to other users and skilled individuals using this app so that I can be engaged with the community of this app | P I | 20 | 18|
+| | Set up socket implementation on server side. | P I | 5 | 5 |
+| | Set up socket implementation on client side  | P I | 3 | 3 |
+| | Design chat UI  | P I | 4 | 3 |
+| | Emit a notification upon receiving a message | P I | 8 | 7 |
+| Patient Self Help | As a user in need of medical assistance, I want to be able to receive help when no doctors are available by being guided them through simple medical procedures | W | 13 | 13 |
+| | Have set procedures as a step-by-step guide| W | 5 | 5 |
+| | Add self-help button to additional details that invokes appropriate help messages according to injury | W | 8 | 8 |
+
 
 
 
