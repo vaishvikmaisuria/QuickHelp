@@ -111,6 +111,17 @@ public class SearchingActivity extends AppCompatActivity implements View.OnClick
             Log.d("SearchingActivity","helperID nonexistent");
         }
 
+        Intent intentOn1 = new Intent(this,SOS_Service.class);
+        this.stopService(intentOn1);
+
+        if(GSocket.getInstance() != null){
+            GSocket.getInstance().disconnect();
+            GSocket.instance = null;
+        }
+
+
+
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

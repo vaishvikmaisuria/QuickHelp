@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.BreakIterator;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +79,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         Button emergencyInfo = (Button) v.findViewById(R.id.button7);
         Button personalInfo = (Button) v.findViewById(R.id.button6);
         Button updateMember = (Button) v.findViewById(R.id.button9);
-
+        Button logoutB = (Button) v.findViewById(R.id.logout);
         button.setOnClickListener(this);
         personalInfo.setOnClickListener(this);
         updateMember.setOnClickListener(this);
@@ -97,6 +98,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                     Intent intentOn = new Intent(getActivity().getApplicationContext(),Location_Service.class);
                     getActivity().stopService(intentOn);
                 }
+            }
+        });
+
+        logoutB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logout();
             }
         });
 
@@ -297,5 +305,26 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             e.printStackTrace();
         }
         return photoPath;
+    }
+
+    private void logout(){
+        User.setUser(null);
+        User.acceptedDocter = null;
+        User.acceptedDocter = null;
+        User.acceptedUser = null;
+        User.items = new ArrayList<String>();
+        Intent intentOn = new Intent(getActivity().getApplicationContext(),Location_Service.class);
+        getActivity().stopService(intentOn);
+        Intent intentOn1 = new Intent(getActivity().getApplicationContext(),SOS_Service.class);
+        getActivity().stopService(intentOn1);
+        if(GSocket.getInstance() != null){
+            GSocket.getInstance().disconnect();
+            GSocket.instance = null;
+        }
+
+        Intent intentOn2 = new Intent(getActivity(), Login.class);
+        startActivity(intentOn2);
+
+
     }
 }
