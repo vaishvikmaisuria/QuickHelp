@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import com.example.profile.User;
 
 
@@ -32,6 +34,7 @@ public class Login extends AppCompatActivity {
 
     private Button loginbtn, registerbtn;
     private EditText usernameET, passwordET;
+    private TextView forgotPassword;
 
     @Override
     protected void onStop(){
@@ -54,6 +57,7 @@ public class Login extends AppCompatActivity {
         passwordET = (EditText) findViewById(R.id.passwordView);
         loginbtn = (Button) findViewById(R.id.loginButton);
         registerbtn = (Button) findViewById(R.id.registerButton);
+        forgotPassword = (TextView) findViewById(R.id.forgotPass);
         Retrofit retrofit = RetrofitClient.getInstance();
         myApi = retrofit.create(INodeJs.class);
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -67,6 +71,12 @@ public class Login extends AppCompatActivity {
 
         });
 
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoforgotpass(v);
+            }
+        });
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +105,11 @@ public class Login extends AppCompatActivity {
     public void goregister(View view) {
 
         Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+    }
+
+    public void gotoforgotpass(View view) {
+        Intent intent = new Intent(this, ForgotPasswordActivity.class);
         startActivity(intent);
     }
 

@@ -20,6 +20,7 @@
         <activity
             android:name=".Medical_History2"
             android:label="@string/medical_history" />
+        <activity android:name=".ForgotPasswordActivity" />
         <activity
             android:name=".Register"
             android:label="@string/register" />

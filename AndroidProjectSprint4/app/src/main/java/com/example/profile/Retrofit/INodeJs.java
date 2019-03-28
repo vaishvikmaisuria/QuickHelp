@@ -31,4 +31,8 @@ public interface INodeJs {
     @POST("user/updateInfo")
     @FormUrlEncoded
     Call<String> updateMed(@Body String m);
+
+    @POST("user/forgot")
+    @FormUrlEncoded
+    Observable<String> forgotPassword(@Field("recoveryEmail") String recoveryEmail);
 }
