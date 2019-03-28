@@ -38,6 +38,8 @@ As sprint 4 was the most productive among all previous sprints, this sprint has 
 	- Emergency Contact
 	- Update Injury Type
 	- Add Profile Picture
+	- Patient Self Help
+	- Chat
 
 2. The main focus will be to finish all user stories assigned in each subteam's individual branches, and combine them into one executable application on the master branch. This ensures that all members are fully aware of how their feature interacts with the main application and solidifies their understanding of all user stories. Merging completed user stories as soon as possible will allow us to resolve any merge conflicts early on in the development process instead of pushing it into later sprints. 
 
