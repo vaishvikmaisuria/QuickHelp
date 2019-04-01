@@ -146,7 +146,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
     // crops image, makes into a circle and sets as profile picture
     private void performCrop() {
-        Bitmap croppedBmp = Bitmap.createBitmap(photo, 0, 0, photo.getWidth(), photo.getWidth());
+        int h = 0;
+        if(photo.getWidth()< photo.getHeight()){
+            h = photo.getWidth();
+        }else{
+             h = photo.getHeight();
+        }
+        Bitmap croppedBmp = Bitmap.createBitmap(photo, 0, 0, h, h);
         profileImage.setImageBitmap(getCircleBitmap(croppedBmp));
     }
 
