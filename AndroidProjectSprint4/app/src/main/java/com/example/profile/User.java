@@ -11,6 +11,26 @@ public class User {
     static public String acceptedDocter = null;
     static public boolean onM = false;
 
+    static public String latti1 = "holy";
+
+    static public String longi1 = "holy";
+
+    public static String getLatti() {
+        return latti1;
+    }
+
+    public static String getLongi() {
+        return longi1;
+    }
+
+    public static void setLatti(String latti) {
+        latti1 = latti;
+    }
+
+    public static void setLongi(String longi) {
+        longi1 = longi;
+    }
+
     public User(){
         // all users have potential to become a professional
     }

@@ -57,17 +57,6 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         button = (Button) v.findViewById(R.id.button_location);
         lSocket = GSocket.getInstance();
 
-
-        button.setOnClickListener(this);
-
-        return v;
-    }
-
-    public  SOSFragment() {}
-
-    @Override
-    public void onClick(View view) {
-
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             buildAlertMessageNoGps();
@@ -79,6 +68,65 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
+        button.setOnClickListener(this);
+
+        return v;
+    }
+
+    public  SOSFragment() {}
+
+    @Override
+    public void onClick(View view) {
+
+        //Some url endpoint that you may have
+        String myUrl = "https://quick-health.herokuapp.com";
+        //String myUrl = "http://localhost:3000";
+
+        //String to place our result in
+        String result = null;
+
+        //Create the Json Object
+        //JSONObject sosLocation = new JSONObject();
+        Map<String, String> postData = new HashMap<>();
+        String name = null;
+        try {
+            name = User.User1.get("username").toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        postData.put("uid", name);
+        postData.put("longitude", longitude);
+        postData.put("latitude", lattitude);
+
+        //Instantiate new instance of our class
+        httpPostRequest task = new httpPostRequest(postData);
+
+        //Perform the doInBackground method, passing in our url
+
+        try {
+            result = task.execute(myUrl + "/sos/newSOS").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        JSONObject JO = null;
+        try {
+            JO = new JSONObject(result);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // this adds the json object to sosDAta
+        sosData.setUsersos(JO);
+
+
+        // this adds the string result
+        sosData.setUser(result);
+
+
+
         Intent intent2 = new Intent(getActivity().getApplicationContext(),SOS_Service.class);
         ContextCompat.startForegroundService(getActivity(), intent2);
 
@@ -119,6 +167,8 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
                     lSocket.emit("SOS",sosObj);
                 }catch (Exception e){}
+                Log.d("lattitude", lattitude);
+                Log.d("lattitude", longitude);
 
                 textView.setText("Your current location is" + "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
@@ -138,7 +188,8 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
                     lSocket.emit("SOS",sosObj);
                 }catch (Exception e){}
-
+                Log.d("lattitude", lattitude);
+                Log.d("lattitude", longitude);
                 textView.setText("Your current location is" + "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
 
@@ -146,6 +197,8 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
             } else if (location2 != null) {
                 double latti = location2.getLatitude();
                 double longi = location2.getLongitude();
+
+
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
@@ -158,9 +211,13 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
                     lSocket.emit("SOS",sosObj);
                 }catch (Exception e){}
+//
+
+
 
                 textView.setText("Your current location is" + "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
+
 
             } else {
 
@@ -168,48 +225,8 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
             }
             // Ibrahim
-
-            //Some url endpoint that you may have
-            String myUrl = "https://quick-health.herokuapp.com";
-            //String myUrl = "http://localhost:3000";
-
-            //String to place our result in
-            String result = null;
-
-            //Create the Json Object
-            //JSONObject sosLocation = new JSONObject();
-            Map<String, String> postData = new HashMap<>();
-            String name = User.User1.get("username").toString();
-            postData.put("uid", name);
-            postData.put("longitude", longitude);
-            postData.put("latitude", lattitude);
-
-            //Instantiate new instance of our class
-            httpPostRequest task = new httpPostRequest(postData);
-
-            //Perform the doInBackground method, passing in our url
-
-            try {
-                result = task.execute(myUrl + "/sos/newSOS").get();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-
-            JSONObject JO = new JSONObject(result);
-
-
-            // Completed the Task JO is the json object with the id
-            Log.d("JSON", JO.get("_id").toString());
-
-            // this adds the json object to sosDAta
-            sosData.setUsersos(JO);
-
-
-            // this adds the string result
-            sosData.setUser(result);
-
+            User.setLatti(lattitude);
+            User.setLongi(longitude);
 
         }
     }
