@@ -47,11 +47,27 @@
         android:text="Password"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/maincolour"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameView" />
+
+    <!--<EditText
+        android:id="@+id/editText"
+        android:layout_width="217dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="45dp"
+        android:ems="10"
+        android:background="@drawable/rounded_corner_button"
+        android:hint = "Password"
+        android:hintColor="@color/maincolour"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="97dp"
+        tools:layout_editor_absoluteY="397dp" />-->
+
 
     <Button
         android:id="@+id/loginButton"
@@ -105,5 +121,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerButton" />
+
 
 </android.support.constraint.ConstraintLayout>

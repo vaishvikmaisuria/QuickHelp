@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -9,8 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -38,17 +45,52 @@
                 android:layout_marginBottom="20dp"
                 android:text="Description" />
 
-            <ImageView
+            <Button
                 android:id="@+id/buttonAccept"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_alignBaseline="@+id/textViewDesc"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="313dp"
-                android:layout_marginLeft="313dp"
-                android:layout_marginTop="35dp"
-                android:src="@drawable/ic_check" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="241dp"
+                android:layout_marginLeft="241dp"
+                android:layout_marginEnd="41dp"
+                android:layout_marginRight="41dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/filled_button_round"
+                android:text="Accept" />
+
+            <Button
+                android:id="@+id/buttonReject"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBaseline="@+id/textViewDesc"
+                android:layout_alignStart="@+id/buttonAccept"
+                android:layout_alignLeft="@+id/buttonAccept"
+                android:layout_alignEnd="@+id/buttonAccept"
+                android:layout_alignRight="@+id/buttonAccept"
+                android:layout_alignBottom="@+id/buttonAccept"
+                android:layout_marginStart="-132dp"
+                android:layout_marginLeft="-132dp"
+                android:layout_marginEnd="132dp"
+                android:layout_marginRight="132dp"
+                android:layout_marginBottom="-7dp"
+                android:background="@drawable/rounded_corner_button"
+                android:text="Reject" />
+
+            <!--<ImageView
+               android:id="@+id/buttonAccept"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:layout_alignParentStart="true"
+               android:layout_alignParentLeft="true"
+               android:layout_alignParentTop="true"
+               android:layout_marginStart="313dp"
+               android:layout_marginLeft="313dp"
+               android:layout_marginTop="35dp"
+               android:src="@drawable/ic_check" />-->
 
             <!--<ImageView-->
             <!--android:id="@+id/buttonReject"-->
