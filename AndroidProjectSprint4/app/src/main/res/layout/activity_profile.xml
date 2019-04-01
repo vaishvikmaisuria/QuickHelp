@@ -219,8 +219,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="173dp"
-        android:layout_height="195dp"
+        android:layout_width="181dp"
+        android:layout_height="181dp"
         android:layout_marginTop="48dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/img"
@@ -229,6 +229,6 @@
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.048" />
 
 </android.support.constraint.ConstraintLayout>
