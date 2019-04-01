@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.example.profile.Retrofit.INodeJs;
 import com.example.profile.httpRequestHelpers.httpPostRequest;
@@ -36,6 +37,7 @@ public class additional_Details extends AppCompatActivity {
     JSONObject send;
     Boolean flag = true;
     private TextInputEditText textbox;
+    private TextView textView10;
     Map<String, Boolean> map = new HashMap<String, Boolean>();
     private INodeJs myApi;
     private  final CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -58,11 +60,77 @@ public class additional_Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional__details);
 
+        map.put("Broken Bones",false);
+        try {
+            change = initJSON();
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+
 
         textbox = (TextInputEditText) findViewById(R.id.textbox22);
-
+        textView10 = (TextView) findViewById(R.id.textView10);
         callbtn = (Button) findViewById(R.id.button_call);
 
+        updatebtn = (Button) findViewById(R.id.button_update);
+
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+
+                try {
+
+                    send = new JSONObject();
+
+                    String Desc = "";
+
+
+
+                    for ( Map.Entry<String, Boolean> entry : map.entrySet() ) {
+                        if (entry.getValue()){
+                            Desc += " " + entry.getKey() + " ,";
+                        }
+                    }
+
+
+                    if(Desc == null || Desc.length() == 0){
+                        Desc = textbox.getText().toString();
+                        if(Desc == null || Desc.length() == 0) {
+                            flag = false;
+                        }else{
+                            flag = true;
+                        }
+                    }else {
+                        flag = true;
+                    }
+
+
+
+                    send.put("id",sosData.getUsersos().get("_id").toString());
+
+                    send.put("injuryDetails",Desc);
+                    httpPostRequest task = new httpPostRequest(null);
+                    task.setJSON(send);
+                    //link to patch the sos collection
+                    task.execute("https://quick-health.herokuapp.com/sos/updateSOS");
+
+
+                }catch (Exception e) {
+                    Log.d(TAG, e.getLocalizedMessage());
+                }
+
+                //go to the next page waiting for the doctor
+                if(flag){
+                    gohelpseverity(view);
+                }else{
+
+                }
+            }
+
+        });
+        
         callbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,47 +203,17 @@ public class additional_Details extends AppCompatActivity {
 //                        Intent intent = new Intent(view.getContext(), self_help_unconscious.class);
 //                        startActivity(intent);
                     }
-
-
-
-
-
             }
 
         });
-
-        updatebtn = (Button) findViewById(R.id.button_update);
-
-
-        updatebtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                addToMap(view);
-
-
-                // go to the next page waiting for the doctor
-                if (flag) {
-                    gohelpseverity(view);
-                } else {
-
-
-                }
-
-            }
-
-            public JSONObject initJSON() throws JSONException {
-                JSONObject x = new JSONObject();
-                x.put("injuryDetails", "");
-
-                return x;
-            }
-
-
-
-        });
-
     } // end onCreate
+
+    public JSONObject initJSON() throws  JSONException{
+        JSONObject x = new JSONObject();
+        x.put("injuryDetails","");
+
+        return x;
+    }
 
     private void emergency_call(final String phoneNumber) {
 
@@ -221,8 +259,6 @@ public class additional_Details extends AppCompatActivity {
             onCheckboxClicked(view);
                     send = new JSONObject();
 //
-
-
                     String Desc = "";
 
 
