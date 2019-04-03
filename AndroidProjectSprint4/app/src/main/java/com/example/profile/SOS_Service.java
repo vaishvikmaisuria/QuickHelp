@@ -79,8 +79,8 @@ public class SOS_Service extends Service {
         Intent notificationIntent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,notificationIntent,0);
         Notification notification = new NotificationCompat.Builder(this, CHANNEL3_ID)
-                .setContentTitle("Location Service")
-                .setContentText("Tracking your location")
+                .setContentTitle("SoS Service")
+                .setContentText("awaiting doctodr response")
                 .setSmallIcon(R.drawable.circle)
                 .setContentIntent(pendingIntent)
                 .build();
