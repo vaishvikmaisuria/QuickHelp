@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.example.profile.Retrofit.INodeJs;
 import com.example.profile.Retrofit.RetrofitClient;
@@ -26,6 +27,7 @@ public class Register extends AppCompatActivity {
     private  final CompositeDisposable compositeDisposable = new CompositeDisposable();
     EditText username, password,email,firstName,lastName,confirm;
     Button submit;
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class Register extends AppCompatActivity {
         lastName = (EditText) findViewById(R.id.regLast);
         confirm = (EditText) findViewById(R.id.regConfirm);
         submit = (Button) findViewById(R.id.regButton);
+        spinner = (ProgressBar) findViewById(R.id.spin);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +85,7 @@ public class Register extends AppCompatActivity {
 
 
     private void RegisterUser(String email,String username,String firstName,String lastName,String password){
+        spinner.setVisibility(View.VISIBLE);
         compositeDisposable.add(myApi.registerUser(email,username,firstName,lastName,password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -93,6 +97,7 @@ public class Register extends AppCompatActivity {
                                    if(response.has("error")){
                                        //Log.d(LOG_TAG, "Register button clicked!");
                                        Snackbar.make(getRootView(), response.get("error").toString(), Snackbar.LENGTH_LONG).show();
+                                       spinner.setVisibility(View.INVISIBLE);
                                    }else {
                                        Snackbar.make(getRootView(), "Registeration Complete", Snackbar.LENGTH_LONG).show();
                                        gotologin(getRootView());

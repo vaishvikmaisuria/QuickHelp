@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 import com.example.profile.Retrofit.INodeJs;
 import com.example.profile.Retrofit.RetrofitClient;
@@ -26,6 +27,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private Button reset_password;
     private INodeJs myApi;
     private  final CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
         Retrofit retrofit = RetrofitClient.getInstance();
         myApi = retrofit.create(INodeJs.class);
+        spinner = (ProgressBar) findViewById(R.id.spin);
 
         reset_password.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +67,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     }
 
     private void forgotPass(String email) {
+        spinner.setVisibility(View.VISIBLE);
         compositeDisposable.add(myApi.forgotPassword(email)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -73,9 +77,11 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                                    JSONObject response = new JSONObject(s);
                                    if(response.has("error")){
                                        Snackbar.make(getRootView(), response.get("error").toString(), Snackbar.LENGTH_LONG).show();
+                                       spinner.setVisibility(View.INVISIBLE);
                                    }else {
                                        User.setUser(response);
                                        gotologin(getRootView());
+                                       spinner.setVisibility(View.INVISIBLE);
 
                                    }
                                }

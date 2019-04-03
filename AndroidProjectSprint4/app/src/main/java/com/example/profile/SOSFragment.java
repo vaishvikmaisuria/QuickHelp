@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,7 +44,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
     LocationManager locationManager;
     String lattitude, longitude;
     private Socket lSocket;
-
+    private ProgressBar spinner;
 
     @Nullable
     @Override
@@ -56,7 +57,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         textView = (TextView) v.findViewById(R.id.text_location);
         button = (Button) v.findViewById(R.id.button_location);
         lSocket = GSocket.getInstance();
-
+        spinner = (ProgressBar) v.findViewById(R.id.spin);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             buildAlertMessageNoGps();
@@ -75,8 +76,8 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
     public  SOSFragment() {}
 
-    @Override
     public void onClick(View view) {
+
 
         //Some url endpoint that you may have
         String myUrl = "https://quick-health.herokuapp.com";
@@ -92,6 +93,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         try {
             name = User.User1.get("username").toString();
         } catch (JSONException e) {
+            spinner.setVisibility(View.INVISIBLE);
             e.printStackTrace();
         }
         postData.put("uid", name);
@@ -106,8 +108,10 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         try {
             result = task.execute(myUrl + "/sos/newSOS").get();
         } catch (InterruptedException e) {
+            spinner.setVisibility(View.INVISIBLE);
             e.printStackTrace();
         } catch (ExecutionException e) {
+            spinner.setVisibility(View.INVISIBLE);
             e.printStackTrace();
         }
 
@@ -115,6 +119,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         try {
             JO = new JSONObject(result);
         } catch (JSONException e) {
+            spinner.setVisibility(View.INVISIBLE);
             e.printStackTrace();
         }
 
@@ -125,16 +130,19 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
         // this adds the string result
         sosData.setUser(result);
 
-
-
         Intent intent2 = new Intent(getActivity().getApplicationContext(),SOS_Service.class);
         ContextCompat.startForegroundService(getActivity(), intent2);
-
+        spinner.setVisibility(View.VISIBLE);
         Intent intent = new Intent(getActivity(), additional_Details.class);
         startActivity(intent);
 
     }
 
+    private void toAdditionalDetails() {
+        Intent intent = new Intent(getActivity(), additional_Details.class);
+        startActivity(intent);
+        spinner.setVisibility(View.INVISIBLE);
+    }
 
 
 
@@ -169,6 +177,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 }catch (Exception e){}
                 Log.d("lattitude", lattitude);
                 Log.d("lattitude", longitude);
+                spinner.setVisibility(View.INVISIBLE);
 
                 textView.setText("Your current location is" + "\n" + "Lattitude = " + lattitude
                         + "\n" + "Longitude = " + longitude);
@@ -210,7 +219,9 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                     sosObj.put("longitude",longitude);
 
                     lSocket.emit("SOS",sosObj);
-                }catch (Exception e){}
+                }catch (Exception e){
+                    spinner.setVisibility(View.INVISIBLE);
+                }
 //
 
 

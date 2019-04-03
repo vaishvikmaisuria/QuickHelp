@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import com.example.profile.User;
 
@@ -35,6 +36,7 @@ public class Login extends AppCompatActivity {
     private Button loginbtn, registerbtn;
     private EditText usernameET, passwordET;
     private TextView forgotPassword;
+    private ProgressBar spinner;
 
     @Override
     protected void onStop(){
@@ -60,12 +62,13 @@ public class Login extends AppCompatActivity {
         forgotPassword = (TextView) findViewById(R.id.forgotPass);
         Retrofit retrofit = RetrofitClient.getInstance();
         myApi = retrofit.create(INodeJs.class);
+        spinner = (ProgressBar) findViewById(R.id.spin);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 LoginUser(usernameET.getText().toString(),passwordET.getText().toString());
-               //Snackbar.make(getRootView(),usernameET.getText().toString()+ " " +passwordET.getText() , Snackbar.LENGTH_LONG).show();
+               //Snackbar.make(getRootView(),usernameET.getText().toString()+ " " +passwordET.getText() , Snackbar.LENGTH_LONG).show();\
             }
 
 
@@ -121,6 +124,7 @@ public class Login extends AppCompatActivity {
 
 
     private void LoginUser(String username,String password){
+        spinner.setVisibility(View.VISIBLE);
         compositeDisposable.add(myApi.loginUser(username,password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -132,10 +136,11 @@ public class Login extends AppCompatActivity {
                                    if(response.has("error")){
                                        //Log.d(LOG_TAG, "Register button clicked!");
                                        Snackbar.make(getRootView(), response.get("error").toString(), Snackbar.LENGTH_LONG).show();
+                                       spinner.setVisibility(View.INVISIBLE);
                                    }else {
                                        User.setUser(response);
                                        gotomain(getRootView());
-
+                                       spinner.setVisibility(View.INVISIBLE);
                                    }
                                }
                            }
