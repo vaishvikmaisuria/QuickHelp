@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -79,6 +80,17 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
 
 
+        new CountDownTimer(3000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                spinner.setVisibility(View.VISIBLE);
+            }
+
+            public void onFinish() {
+                spinner.setVisibility(View.INVISIBLE);
+            }
+        }.start();
+
         //Some url endpoint that you may have
         String myUrl = "https://quick-health.herokuapp.com";
         //String myUrl = "http://localhost:3000";
@@ -132,7 +144,6 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
 
         Intent intent2 = new Intent(getActivity().getApplicationContext(),SOS_Service.class);
         ContextCompat.startForegroundService(getActivity(), intent2);
-        spinner.setVisibility(View.VISIBLE);
         Intent intent = new Intent(getActivity(), additional_Details.class);
         startActivity(intent);
 

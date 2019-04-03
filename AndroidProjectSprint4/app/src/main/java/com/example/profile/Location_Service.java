@@ -81,46 +81,7 @@ public class Location_Service extends Service {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            listener = new LocationListener() {
-                @Override
-                public void onLocationChanged(Location location) {
-                    Log.i(TAG, "HIT2 ");
-                    try {
-                        JSONObject sendz = new JSONObject();
-                        sendz.put("username",User.User1.getString("username"));
-                        sendz.put("latitude",location.getLatitude());
-                        sendz.put("longitude",location.getLongitude());
-                        lSocket.emit("update_location",sendz);
-                        Log.i(TAG, "EMITTED ");
 
-
-                    }catch (Exception e){
-                        Log.i(TAG, "EMITTED ");
-                    }
-
-
-                }
-
-                @Override
-                public void onStatusChanged(String s, int i, Bundle bundle) {
-
-                }
-
-                @Override
-                public void onProviderEnabled(String s) {
-
-                }
-
-                @Override
-                public void onProviderDisabled(String s) {
-                    Intent i = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(i);
-                }
-            };
-            locationManager = (LocationManager) getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
-
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,x,0,listener);
 
 
         }
