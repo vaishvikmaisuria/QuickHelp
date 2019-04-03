@@ -6,8 +6,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,6 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Medical_History2"
             android:label="@string/medical_history" />
@@ -37,44 +44,43 @@
             android:name=".EmergencyInfo"
             android:label="Emergency Contact" />
         <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <service android:name=".Location_Service"/>
-        <service android:name=".SOS_Service"/>
+
+        <service android:name=".Location_Service" />
+        <service android:name=".SOS_Service" />
+
         <activity
             android:name=".map_Activity"
             android:label="@string/title_activity_map_"
             android:theme="@style/AppTheme" />
         <activity android:name=".Notification" />
         <activity android:name=".additional_Details" />
-        <activity android:name=".SearchingActivity"></activity>
-        <activity android:name=".self_help_blocked_airway"
-            android:label="Blocked Airway"/>
-        <activity android:name=".self_help_brokenbone"
-            android:parentActivityName=".additional_Details">
-        </activity>
-        <activity android:name=".self_help_burn"
-            android:parentActivityName=".additional_Details">
-        </activity>
-        <activity android:name=".self_help_bleeding"
-            android:parentActivityName=".additional_Details">
-        </activity>
-        <activity android:name=".self_help_heart"
-            android:parentActivityName=".additional_Details">
-        </activity>
-        <activity android:name=".self_help_unconscious"
-            android:parentActivityName=".additional_Details">
-        </activity>
-        <!--<activity android:name=".help_severity"/>-->
-        <activity android:name=".ValidateDoctor"
-            android:parentActivityName=".additional_Details">
-        </activity>
+        <activity android:name=".SearchingActivity" />
+        <activity
+            android:name=".self_help_blocked_airway"
+            android:label="Blocked Airway" />
+        <activity
+            android:name=".self_help_brokenbone"
+            android:parentActivityName=".additional_Details"></activity>
+        <activity
+            android:name=".self_help_burn"
+            android:parentActivityName=".additional_Details"></activity>
+        <activity
+            android:name=".self_help_bleeding"
+            android:parentActivityName=".additional_Details"></activity>
+        <activity
+            android:name=".self_help_heart"
+            android:parentActivityName=".additional_Details"></activity>
+        <activity
+            android:name=".self_help_unconscious"
+            android:parentActivityName=".additional_Details"></activity> <!-- <activity android:name=".help_severity"/> -->
+        <activity
+            android:name=".ValidateDoctor"
+            android:parentActivityName=".additional_Details"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA_yDxqJreVJxVMtDZmY3PWMAYutExWujY"
-            />
+            android:value="AIzaSyA_yDxqJreVJxVMtDZmY3PWMAYutExWujY" />
     </application>
+
 </manifest>

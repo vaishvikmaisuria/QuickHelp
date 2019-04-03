@@ -1,1 +1,0 @@
-Overall, QuickHelp was a success for the QuickHealth team. We had both happy and stressful periods of agony with the development period of the project. Therefore, our team managed to produce a product that exceeded the expectation of the group and could potentially revolutionize the countries Health System.
