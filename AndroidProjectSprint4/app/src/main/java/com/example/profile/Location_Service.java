@@ -61,6 +61,7 @@ public class Location_Service extends Service {
         handlerThread.start();
         looper = handlerThread.getLooper();
         handler = new Handler(looper);
+
     }
 
     private Runnable myTask = new Runnable() {
@@ -93,6 +94,7 @@ public class Location_Service extends Service {
         if(locationManager != null){
             locationManager.removeUpdates(listener);
         }
+        User.onS = false;
     }
 
     @Override
@@ -110,6 +112,7 @@ public class Location_Service extends Service {
             this.isRunning = true;
             this.handler.post(myTask);
         }
+        User.onS = true;
 
         startForeground(1,notification);
 

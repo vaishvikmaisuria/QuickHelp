@@ -9,7 +9,7 @@ public class User {
     static public String acceptedUser = null;
     static public ArrayList<String> items = new ArrayList<>();
     static public String acceptedDocter = null;
-    static public boolean onM = false;
+    static public boolean onS = false;
 
     static public String latti1 = "holy";
 

@@ -143,10 +143,12 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
                 @Override
                 public void run() {
                     try {
-//                        JSONObject data = (JSONObject) args[0];
-//                        String userId = data.getString("from");
-//                        String message = data.getString("message");
-//                        User.items.add(userId + ":" + " " + message);
+                        if(!User.onS){
+                            JSONObject data = (JSONObject) args[0];
+                            String userId = data.getString("from");
+                            String message = data.getString("message");
+                            User.items.add(userId + ":" + " " + message);
+                        }
                         adapter.notifyDataSetChanged();
 
                     }catch (Exception e){
