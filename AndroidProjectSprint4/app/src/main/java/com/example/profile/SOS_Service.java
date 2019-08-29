@@ -49,6 +49,7 @@ public class SOS_Service extends Service {
         handlerThread.start();
         looper = handlerThread.getLooper();
         handler = new Handler(looper);
+
     }
 
     private Runnable myTask = new Runnable() {
@@ -91,11 +92,17 @@ public class SOS_Service extends Service {
         }
 
         startForeground(1,notification);
+        User.onS = true;
         return START_STICKY;
 
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        User.onS = false;
+    }
 
     private void createNotificationChannel(){
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){

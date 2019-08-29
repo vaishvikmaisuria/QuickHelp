@@ -108,6 +108,17 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
             spinner.setVisibility(View.INVISIBLE);
             e.printStackTrace();
         }
+
+        try{
+            JSONObject sosObj = new JSONObject();
+            sosObj.put("username", User.User1.getString("username"));
+            sosObj.put("firstName", User.User1.get("firstName").toString());
+            sosObj.put("latitude", lattitude);
+            sosObj.put("longitude",longitude);
+
+            lSocket.emit("SOS",sosObj);
+        }catch (Exception e){}
+
         postData.put("uid", name);
         postData.put("longitude", longitude);
         postData.put("latitude", lattitude);
@@ -177,15 +188,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                try{
-                    JSONObject sosObj = new JSONObject();
-                    sosObj.put("username", User.User1.getString("username"));
-                    sosObj.put("firstName", User.User1.get("firstName").toString());
-                    sosObj.put("latitude", lattitude);
-                    sosObj.put("longitude",longitude);
 
-                    lSocket.emit("SOS",sosObj);
-                }catch (Exception e){}
                 Log.d("lattitude", lattitude);
                 Log.d("lattitude", longitude);
                 spinner.setVisibility(View.INVISIBLE);
@@ -199,15 +202,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                try{
-                    JSONObject sosObj = new JSONObject();
-                    sosObj.put("username", User.User1.getString("username"));
-                    sosObj.put("firstName", User.User1.get("firstName").toString());
-                    sosObj.put("latitude", lattitude);
-                    sosObj.put("longitude",longitude);
 
-                    lSocket.emit("SOS",sosObj);
-                }catch (Exception e){}
                 Log.d("lattitude", lattitude);
                 Log.d("lattitude", longitude);
                 textView.setText("Your current location is" + "\n" + "Lattitude = " + lattitude
@@ -222,17 +217,7 @@ public class SOSFragment extends Fragment implements View.OnClickListener {
                 lattitude = String.valueOf(latti);
                 longitude = String.valueOf(longi);
 
-                try{
-                    JSONObject sosObj = new JSONObject();
-                    sosObj.put("username", User.User1.getString("username"));
-                    sosObj.put("firstName", User.User1.get("firstName").toString());
-                    sosObj.put("latitude", lattitude);
-                    sosObj.put("longitude",longitude);
 
-                    lSocket.emit("SOS",sosObj);
-                }catch (Exception e){
-                    spinner.setVisibility(View.INVISIBLE);
-                }
 //
 
 
